@@ -1,11 +1,13 @@
 #für Render Template müssen noch alle notwendigen Templates erstellt werden
 from flask import Flask, render_template
+
 from flask_bootstrap import Bootstrap5
 from routes import main_bp
 from db import db, create_tables
 from models import *
 
 #TODO!!! => LOGIN MANAGER, DAMIT KEINE UNBEFUGTEN ZUGRIFFE MÖGLICH SIND
+
 
 app = Flask(__name__)
 
