@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 # Gruppenprojekt JAK
 
 Das oben verlinkte Repo beinhaltet den Quellcode für uder Projekt
 
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes und besteht aus:
 
+=======
+# WebDev
+test
+>>>>>>> 2636b3b (Initial commit (nach Umstrukturierung))
