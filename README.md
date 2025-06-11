@@ -1,4 +1,6 @@
 # Gruppenprojekt JAK
 
-Dieses Github Repository inklusive Github Pages Website beinhaltet unser Projekt
+Das oben verlinkte Repo beinhaltet den Quellcode für uder Projekt
+
+Diese Github Pages Seite dient zur Dokumentation unseren Projektes und besteht aus:
 
