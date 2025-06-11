@@ -16,7 +16,7 @@ bootstrap = Bootstrap5(app)
 #Start page
 @app.route('/')
 def index():
-    return 'Start Window!'
+    return render_template('start.html')
 
 #Login page
 @app.route('/login')
@@ -26,7 +26,7 @@ def login():
 #Register page
 @app.route('/register')
 def register():
-    return 'Register Screen'
+    return render_template('register.html')
 
 #Find Match Page
 @app.route('/findMatch')
