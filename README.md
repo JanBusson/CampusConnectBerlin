@@ -1,8 +1,10 @@
 # Gruppenprojekt JAK
 
-Das oben verlinkte Repo beinhaltet den Quellcode für uder Projekt
+Das oben verlinkte Repo beinhaltet den Quellcode für unser Projekt
 
-Diese Github Pages Seite dient zur Dokumentation unseren Projektes und besteht aus:
+Diese Github Pages Seite dient zur Dokumentation unseren Projektes
+Bestandteile:
 
-
-- Unser [Datenmodell](https://www.google.com)
+- [Datenmodell](https://www.google.com)
+- [Value Proposition](https://www.google.com)
+- [Aufteilung der Aufgaben](https://www.google.com)
