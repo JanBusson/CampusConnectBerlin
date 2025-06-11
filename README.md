@@ -1,7 +1,3 @@
----
-title: Home
-nav_order: 0
----
 # Gruppenprojekt JAK
 
 Das oben verlinkte Repo beinhaltet den Quellcode für uder Projekt
