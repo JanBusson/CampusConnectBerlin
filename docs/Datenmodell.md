@@ -1,4 +1,4 @@
-# Datenmodell Übersicht
+# Datenmodell
 
 ## User
 Speichert die Informationen über alle User.  
