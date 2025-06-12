@@ -1,3 +1,8 @@
+---
+title: Home
+nav_order: 0
+---
+
 # Gruppenprojekt JAK
 
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes

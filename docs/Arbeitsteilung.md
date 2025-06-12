@@ -1,9 +1,14 @@
+---
+title: Arbeitsteilung
+nav_order: 2
+---
+
 # Arbeitsteilung
 Wir haben die Aufgaben für die App
 
 ## Ailin
 Login  
-User Registrierung inkl Personality Test
+User Registrierung inkl Personality Test  
 UI Design
 
 ## Jan
