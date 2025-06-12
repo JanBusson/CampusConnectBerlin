@@ -9,6 +9,7 @@ UI Design
 ## Jan
 Chat Funktion  
 Richitge Einbindung des Datenmodells in die App gewährleisten
+
 ## Kaan
 Aufsetzen eines Datenmodells  
 Logik für User Matching erstellen
