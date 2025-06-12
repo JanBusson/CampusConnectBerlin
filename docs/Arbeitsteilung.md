@@ -1,3 +1,8 @@
+---
+title: Arbeitsteilung
+nav_order: 2
+---
+
 # Arbeitsteilung
 Wir haben die Aufgaben für die App
 

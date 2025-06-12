@@ -1,3 +1,8 @@
+---
+title: Datenmodell
+nav_order: 3
+---
+
 # Datenmodell
 
 ## User
