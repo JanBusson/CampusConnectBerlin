@@ -7,7 +7,7 @@ Das oben verlinkte Repo beinhaltet den Quellcode für unser Projekt
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes
 Bestandteile:
 
-- [Datenmodell](https://www.google.com)
+- [Datenmodell](Datenmodell.md)
 - [Value Proposition](https://www.google.com)
 - [Aufteilung der Aufgaben](https://www.google.com)
 - [Quellennutzung](https://www.google.com)
