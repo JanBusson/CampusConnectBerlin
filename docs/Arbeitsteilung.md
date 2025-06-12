@@ -2,14 +2,13 @@
 Wir haben die Aufgaben für die App
 
 ## Ailin
-Login <br>
-User Registrierung inkl Personality Test <br>
+Login  
+User Registrierung inkl Personality Test
 UI Design
 
 ## Jan
-Chat Funktion <br>
-Richitge Einbindung des Datenmodells in die App gewährleisten <br>
-
+Chat Funktion  
+Richitge Einbindung des Datenmodells in die App gewährleisten
 ## Kaan
-Aufsetzen eines Datenmodells <br>
+Aufsetzen eines Datenmodells  
 Logik für User Matching erstellen
