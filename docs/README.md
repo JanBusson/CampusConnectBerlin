@@ -1,9 +1,5 @@
 # Gruppenprojekt JAK
 
-Unsere erste Page
-
-Das oben verlinkte Repo beinhaltet den Quellcode für unser Projekt
-
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes
 Bestandteile:
 
