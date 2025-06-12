@@ -10,3 +10,4 @@ Bestandteile:
 - [Datenmodell](https://www.google.com)
 - [Value Proposition](https://www.google.com)
 - [Aufteilung der Aufgaben](https://www.google.com)
+- [Quellennutzung](https://www.google.com)
