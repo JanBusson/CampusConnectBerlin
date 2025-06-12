@@ -5,5 +5,5 @@ Bestandteile:
 
 - [Datenmodell](Datenmodell.md)
 - [Value Proposition](value-proposition.md)
-- [Aufteilung der Aufgaben](https://www.google.com)
+- [Arbeitsteilung](Arbeitsteilung.md)
 - [Quellennutzung](Quellennutzung.md)
