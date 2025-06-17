@@ -3,7 +3,8 @@ title: Home
 nav_order: 0
 ---
 
-# Gruppenprojekt JAK
+# Campus Connect Berlin
+## Gruppenprojekt JAK
 
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes
 Bestandteile:
