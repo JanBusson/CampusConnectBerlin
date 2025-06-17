@@ -1,6 +1,7 @@
 #für Render Template müssen noch alle notwendigen Templates erstellt werden
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
+from routes import main_bp
 
 app = Flask(__name__)
 
@@ -13,10 +14,9 @@ app.config.from_mapping(
 
 bootstrap = Bootstrap5(app)
 
-#Start page
-@app.route('/')
-def index():
-    return render_template('start.html')
+# Blueprint registrieren
+app.register_blueprint(main_bp)
+
 
 #Login page
 @app.route('/login')

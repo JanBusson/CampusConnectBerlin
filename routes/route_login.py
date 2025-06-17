@@ -1,4 +1,3 @@
-# app/routes/login.py
 from flask import render_template
 from . import main_bp
 
