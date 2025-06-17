@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, SubmitField
-from wtforms.validators import DataRequired, Length, Email
+from wtforms.validators import DataRequired, Length
 
 #TODO Fehlermeldungen für die einzelnen Validators coden
 
