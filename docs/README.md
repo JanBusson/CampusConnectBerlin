@@ -1,2 +1,0 @@
-# Gruppenprojekt Web Dev
-
