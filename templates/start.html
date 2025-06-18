@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
-{% block HEADER %}
-    <h2>{% block TITLE %}Start{% endblock %}</h2>
-{% endblock %}
+{% block title %}Campus Connect Berlin{% endblock %}
 
-{% block CONTENT %}
-<p>Welcome 😃</p>
+{% block content %}
+    <div class="text-center">
+        <h1>Log in or register if you haven't</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.login(class="btn btn-primary m-2") }}
+            {{ form.register(class="btn btn-secondary m-2") }}
+        </form>
+    </div>
 {% endblock %}

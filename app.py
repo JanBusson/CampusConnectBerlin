@@ -11,6 +11,7 @@ app.config.from_mapping(
     SECRET_KEY='secret_key_just_for_dev_environment',
     SQLALCHEMY_DATABASE_URI='sqlite:///campusconnect_berlin.sqlite',
     SQLALCHEMY_TRACK_MODIFICATIONS=False
+    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'  # (2.)
 )
 
 db.init_app(app)
@@ -21,11 +22,6 @@ bootstrap = Bootstrap5(app)
 # Blueprint registrieren
 app.register_blueprint(main_bp)
 
-
-#Login page
-@app.route('/login')
-def login():
-    return 'Login Screen'
 
 #Register page
 @app.route('/register')
@@ -50,3 +46,6 @@ def http_not_found(e):
 @app.errorhandler(500)
 def http_internal_server_error(e):
     return render_template('500.html'), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
