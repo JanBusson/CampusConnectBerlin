@@ -2,15 +2,19 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 from routes import main_bp
+from db import db, create_tables
+from models import *
 
 app = Flask(__name__)
 
 app.config.from_mapping(
-    #Noch nich timplementiert
-    #SECRET_KEY = 'secret_key_just_for_dev_environment',
-    #DATABASE = os.path.join(app.instance_path, 'todos.sqlite'),
-    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'  # (2.)
+    SECRET_KEY='secret_key_just_for_dev_environment',
+    SQLALCHEMY_DATABASE_URI='sqlite:///campusconnect_berlin.sqlite',
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
 )
+
+db.init_app(app)
+create_tables(app)
 
 bootstrap = Bootstrap5(app)
 
