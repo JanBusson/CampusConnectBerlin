@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 app.config.from_mapping(
     #Noch nich timplementiert
-    #SECRET_KEY = 'secret_key_just_for_dev_environment',
+    SECRET_KEY = 'secret_key_just_for_dev_environment',
     #DATABASE = os.path.join(app.instance_path, 'todos.sqlite'),
     BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'  # (2.)
 )
@@ -17,11 +17,6 @@ bootstrap = Bootstrap5(app)
 # Blueprint registrieren
 app.register_blueprint(main_bp)
 
-
-#Login page
-@app.route('/login')
-def login():
-    return 'Login Screen'
 
 #Register page
 @app.route('/register')

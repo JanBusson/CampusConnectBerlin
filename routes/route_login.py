@@ -2,8 +2,6 @@ from flask import Blueprint, render_template
 from . import main_bp
 from forms.form_login import CreateLoginForm
 
-login_bp = Blueprint('login', __name__) 
-
 @main_bp.route('/login')
 def login():
     form = CreateLoginForm()
