@@ -7,7 +7,7 @@ def index():
     form = CreateStartForm()
     if form.validate_on_submit():
         if form.login.data:
-            return redirect(url_for('main_bp.login'))
+            return redirect(url_for('main.login'))
         elif form.register.data:
-            return redirect(url_for('main_bp.register'))
+            return redirect(url_for('main.register'))
     return render_template('start.html', form=form)
