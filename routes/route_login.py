@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,redirect, url_for
+from flask import render_template,redirect, url_for
 from . import main_bp
 from forms.form_login import CreateLoginForm
 
