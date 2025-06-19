@@ -9,7 +9,7 @@ nav_order: 0
 Diese Github Pages Seite dient zur Dokumentation unseren Projektes
 Bestandteile:
 
-- [Datenmodell](Datenmodell.md)
+- [Datenmodell](data-model.md)
 - [Value Proposition](value-proposition.md)
 - [Arbeitsteilung](Arbeitsteilung.md)
 - [Quellennutzung](Quellennutzung.md)
