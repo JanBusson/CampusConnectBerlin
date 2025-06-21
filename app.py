@@ -11,7 +11,7 @@ app.config.from_mapping(
     SECRET_KEY='secret_key_just_for_dev_environment',
     SQLALCHEMY_DATABASE_URI='sqlite:///campusconnect_berlin.sqlite',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
-    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'  # (2.)
+    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'
 )
 
 db.init_app(app)
