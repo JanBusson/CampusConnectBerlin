@@ -8,7 +8,7 @@ import bcrypt
 @main_bp.route('/register', methods=['GET', 'POST'])
 def register():
     form=CreateRegisternForm()
-    form.university.choices = [(u.id, u.name) for u in university_dao.get_all()]
+    form.university.choices = [(u.uni_id, u.name) for u in university_dao.get_all()]
 
     if form.validate_on_submit():
     # Auslesen der Eingaben
