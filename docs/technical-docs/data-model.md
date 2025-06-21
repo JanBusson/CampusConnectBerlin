@@ -96,6 +96,6 @@ Im Folgenden sind die zugehörigen Attribute, Typen und Einschränkungen aufgeli
 
 **Constraints und Beziehungen:**
 
-Die Datenbank stellt durch `NOT NULL`, `UNIQUE` und `FOREIGN KEY`-Constraints sicher, dass Datensätze vollständig, eindeutig und korrekt verknüpft sind. Das Modell basiert auf SQLAlchemy und spiegelt die funktionalen Anforderungen der App wider.
+Die Datenbank stellt durch `NOT NULL`, `UNIQUE` und `FOREIGN KEY` Constraints sicher, dass Datensätze vollständig, eindeutig und korrekt verknüpft sind. Das Modell basiert auf SQLAlchemy und die funktionalen Anforderungen der App wider.
 
 ---
