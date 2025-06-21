@@ -1,7 +1,7 @@
 from flask import render_template,redirect, url_for, flash
 from . import main_bp
 from forms.form_login import CreateLoginForm
-from dao.user_dao import check_user_credentials
+from dao.user_dao import user_dao
 
 @main_bp.route('/login', methods=['GET', 'POST']) 
 def login():
@@ -13,10 +13,10 @@ def login():
         password = form.password.data
         
         #gibt entweder den User mit den entsprechenden Login Daten zurück bei korrekter Eingabe oder none
-        user = check_user_credentials(email,password)
+        user = user_dao.check_user_credentials(email,password)
 
         if user:
-            return redirect(url_for('welocme.login',user=user))
+            return redirect(url_for('main.welcome',user=user))
         else:
             flash('Login fehlgeschlagen. Bitte überprüfe Benutzername und Passwort.')
             return redirect(url_for('main.login'))
