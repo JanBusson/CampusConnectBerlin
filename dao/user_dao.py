@@ -16,12 +16,12 @@ class user_dao:
 
     # Create a new user
     @classmethod
-    def create_user(cls, name, email, password, age, uni_id):
+    def create_user(cls, name, email, password, birth_date, uni_id):
         new_user = User(
             name=name,
             email=email,
             password=password,
-            age=age,
+            birth_date=birth_date,
             uni_id=uni_id
         )
         db.session.add(new_user)

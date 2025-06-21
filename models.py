@@ -15,7 +15,7 @@ class User(db.Model):
     name = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, unique=True, nullable=False)
     password = db.Column(db.Text, nullable=False)
-    age = db.Column(db.Integer)
+    birth_date = db.Column(db.Date, nullable=False)
     created_at = db.Column(db.Date, default=date.today)
 
     university = db.relationship('University', backref='students', lazy=True)
