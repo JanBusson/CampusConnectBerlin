@@ -1,9 +1,40 @@
 {% extends 'base.html' %}
 
-{% block header %}
-    <h2>{% block title %}Register{% endblock %}</h2>
-{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block content %}
-<p>Register User</p>
+    <h2>Register</h2>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.name.label }}
+            {{ form.name(size=32) }}
+        </div>
+
+        <div>
+            {{ form.email.label }}
+            {{ form.email(size=32) }}
+        </div>
+
+        <div>
+            {{ form.university.label }}
+            {{ form.university() }}
+        </div>
+
+        <div>
+            {{ form.birthday.label }}
+            {{ form.birthday() }}
+        </div>
+
+        <div>
+            {{ form.password.label }}
+            {{ form.password(size=32) }}
+        </div>
+
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
 {% endblock %}
