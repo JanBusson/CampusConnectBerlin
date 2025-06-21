@@ -5,6 +5,8 @@ from routes import main_bp
 from db import db, create_tables
 from models import *
 
+#TODO!!! => LOGIN MANAGER, DAMIT KEINE UNBEFUGTEN ZUGRIFFE MÖGLICH SIND
+
 app = Flask(__name__)
 
 app.config.from_mapping(
