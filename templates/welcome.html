@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Welcome, {{ username }} 💕</h2>
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div>
+        {{ form.find_matches}}
+    </div>
+
+    <div>
+        {{ form.set_filters }}
+    </div>
+
+    <div>{{ form.my_matches() }}</div>
+</form>
+{% endblock %}

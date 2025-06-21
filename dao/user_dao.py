@@ -16,13 +16,14 @@ class user_dao:
 
     # Create a new user
     @classmethod
-    def create_user(cls, name, email, password, birth_date, uni_id):
+    def create_user(cls, name, email, password, age, uni_id, profile_picture=None):
         new_user = User(
             name=name,
             email=email,
             password=password,
-            birth_date=birth_date,
-            uni_id=uni_id
+            age=age,
+            uni_id=uni_id,
+            profile_picture=profile_picture
         )
         db.session.add(new_user)
         db.session.commit()
@@ -45,3 +46,9 @@ class user_dao:
         if user and bcrypt.checkpw(password.encode('utf-8'), user.password):
             return user
         return None
+
+    # Get profile picture data by UID
+    @classmethod
+    def get_profile_picture_by_uid(cls, user_id) -> bytes | None:
+        user = db.session.get(User, user_id)
+        return user.profile_picture if user else None

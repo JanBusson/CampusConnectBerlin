@@ -5,6 +5,8 @@ from routes import main_bp
 from db import db, create_tables
 from models import *
 
+#TODO!!! => LOGIN MANAGER, DAMIT KEINE UNBEFUGTEN ZUGRIFFE MÖGLICH SIND
+
 app = Flask(__name__)
 
 app.config.from_mapping(
@@ -21,22 +23,6 @@ bootstrap = Bootstrap5(app)
 
 # Blueprint registrieren
 app.register_blueprint(main_bp)
-
-
-#Register page
-@app.route('/register')
-def register():
-    return render_template('register.html')
-
-#Find Match Page
-@app.route('/findMatch')
-def findMatch():
-    return 'Find Match'
-
-#Matches Page
-@app.route('/Matches')
-def matches():
-    return 'My Matches'
 
 #Error handling
 @app.errorhandler(404)
