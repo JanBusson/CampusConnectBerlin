@@ -11,17 +11,11 @@
     <div>
         {{ form.email.label }}
         {{ form.email(size=32) }}
-        {% for error in form.email.errors %}
-            <div style="color:red;">{{ error }}</div>
-        {% endfor %}
     </div>
 
     <div>
         {{ form.password.label }}
         {{ form.password(size=32) }}
-        {% for error in form.password.errors %}
-            <div style="color:red;">{{ error }}</div>
-        {% endfor %}
     </div>
 
     <div>{{ form.submit() }}</div>
