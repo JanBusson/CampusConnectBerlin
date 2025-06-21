@@ -22,22 +22,6 @@ bootstrap = Bootstrap5(app)
 # Blueprint registrieren
 app.register_blueprint(main_bp)
 
-
-#Register page
-@app.route('/register')
-def register():
-    return render_template('register.html')
-
-#Find Match Page
-@app.route('/findMatch')
-def findMatch():
-    return 'Find Match'
-
-#Matches Page
-@app.route('/Matches')
-def matches():
-    return 'My Matches'
-
 #Error handling
 @app.errorhandler(404)
 def http_not_found(e):
