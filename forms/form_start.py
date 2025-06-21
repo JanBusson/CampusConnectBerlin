@@ -3,7 +3,7 @@ from wtforms.fields import SubmitField
 
 #Erstellt Login
 class CreateStartForm(FlaskForm):  
-    #Felder für die Eingabe beim Login
+    #Auswahl
     login = SubmitField('Login')
     register = SubmitField('Register')
     

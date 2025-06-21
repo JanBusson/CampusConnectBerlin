@@ -7,4 +7,5 @@ main_bp = Blueprint('main', __name__)
 # Importiert alle Routen
 from . import route_start
 from . import route_login
+from . import route_register
 from . import route_welcome
