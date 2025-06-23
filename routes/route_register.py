@@ -18,6 +18,8 @@ def register():
         birthday = form.birthday.data
         password = form.password.data
         hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-        user_dao.create_user(name=name,email=email,password=hashed_pw,uni_id=university_id,age=birthday)
+        profile_picture_data=form.profilePic.data
+        profile_picture= profile_picture_data.read()
+        user_dao.create_user(name=name,email=email,password=hashed_pw,uni_id=university_id,birth_date=birthday,profile_picture=profile_picture)
 
     return render_template('register.html', form=form)

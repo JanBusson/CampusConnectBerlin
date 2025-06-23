@@ -5,7 +5,7 @@
 {% block content %}
     <h2>Register</h2>
 
-    <form method="POST">
+    <form method="POST"  enctype="multipart/form-data">
         {{ form.hidden_tag() }}
 
         <div>
@@ -25,12 +25,17 @@
 
         <div>
             {{ form.birthday.label }}
-            {{ form.birthday() }}
+            {{ form.birthday(size=32) }}
         </div>
 
         <div>
             {{ form.password.label }}
             {{ form.password(size=32) }}
+        </div>
+
+        <div>
+            {{ form.profilePic.label }}
+            {{ form.profilePic(accept="image/*") }}
         </div>
 
         <div>
