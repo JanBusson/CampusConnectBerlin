@@ -9,3 +9,6 @@ __pycache__/
 
 # ignores Flask instance folder (contains config/db/etc.)
 instance/
+
+#ignores quiz folder
+/quiz/
