@@ -19,7 +19,7 @@ def welcome(user_id):
 #        elif form.my_matches.data:
 #            return redirect(url_for('main.register'))
         
-        return render_template('welcome.html',form=form)
+        return render_template('welcome.html',form=form,user=user)
     else:
         abort(404)
 
