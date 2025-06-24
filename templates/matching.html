@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>{% block title %}Matching{% endblock %}</h2>
+    <h2>
+    {% block title %} 
+    
+        {{user.name}}, {{age}}
+
+    {% endblock %}
+    </h2>
 {% endblock %}
 
 {% block content %}
 <p>Page not found</p>
+<img src="{{ url_for('main.profile_picture', user_id=user.user_id) }}" alt="Profilbild" width="200" height="200">
 {% endblock %}

@@ -10,3 +10,4 @@ from . import route_login
 from . import route_register
 from . import route_welcome
 from . import route_matching
+from . import profile_picture
