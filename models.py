@@ -18,6 +18,7 @@ class User(db.Model):
     birth_date = db.Column(db.Date, nullable=False)
     created_at = db.Column(db.Date, default=date.today)
     profile_picture = db.Column(db.LargeBinary, nullable=False)
+    description = db.Column(db.Text, nullable=False, default="")
 
     university = db.relationship('University', backref='students', lazy=True)
     personality_result = db.relationship('PersonalityResult', uselist=False, backref='user')
