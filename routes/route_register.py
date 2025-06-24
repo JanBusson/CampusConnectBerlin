@@ -21,9 +21,10 @@ def register():
         hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         profile_picture_data=form.profilePic.data
         profile_picture= profile_picture_data.read()
+        description = form.description.data
 
         #den neune Nutzer mit den Eingaben anlegen
-        new_user = user_dao.create_user(name=name,email=email,password=hashed_pw,uni_id=university_id,birth_date=birthday,profile_picture=profile_picture)
+        new_user = user_dao.create_user(name=name,email=email,password=hashed_pw,uni_id=university_id,birth_date=birthday,profile_picture=profile_picture,description=description)
 
         return redirect(url_for('main.welcome',user_id=new_user.user_id))
 
