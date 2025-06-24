@@ -2,7 +2,7 @@
 from . import main_bp
 from flask import render_template
 from dao.user_dao import user_dao
-from services.calculate_age import calculate_age
+from services.user_service import calculate_age
 
 @main_bp.route('/matching/<int:user_id>', methods=['GET', 'POST']) 
 def matching(user_id):
