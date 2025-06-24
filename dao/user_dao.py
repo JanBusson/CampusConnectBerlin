@@ -16,14 +16,15 @@ class user_dao:
 
     # Create a new user
     @classmethod
-    def create_user(cls, name, email, password, birth_date, uni_id, profile_picture):
+    def create_user(cls, name, email, password, birth_date, uni_id, profile_picture, description):
         new_user = User(
             name=name,
             email=email,
             password=password,
             birth_date=birth_date,
             uni_id=uni_id,
-            profile_picture=profile_picture
+            profile_picture=profile_picture,
+            description=description
         )
         db.session.add(new_user)
         db.session.commit()
