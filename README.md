@@ -1,2 +1,7 @@
-# fswd
-Repo for FSWD project. Created on 15.05.2025
+# Gruppenprojekt "CampusConnect Berlin"
+
+Gruppenmitglieder:
+Baskaya, Kaan
+Busson, Jan
+Esenalieva, Ailin
+

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h2>Register</h2>
+
+    <form method="POST"  enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.name.label }}
+            {{ form.name(size=32) }}
+        </div>
+
+        <div>
+            {{ form.email.label }}
+            {{ form.email(size=32) }}
+        </div>
+
+        <div>
+            {{ form.university.label }}
+            {{ form.university() }}
+        </div>
+
+        <div>
+            {{ form.birthday.label }}
+            {{ form.birthday(size=32) }}
+        </div>
+
+        <div>
+            {{ form.password.label }}
+            {{ form.password(size=32) }}
+        </div>
+
+        <div>
+            {{ form.profilePic.label }}
+            {{ form.profilePic(accept="image/*") }}
+        </div>
+
+        <div>
+            {{ form.description.label }}
+            {{ form.description(size=32) }}
+        </div>
+
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}

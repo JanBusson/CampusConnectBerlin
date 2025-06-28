@@ -1,1 +1,14 @@
-venv/
+# ignores venv folder
+.venv/
+
+# ignores pycache
+__pycache__/
+
+# ignores SQLite databases
+*.sqlite
+
+# ignores Flask instance folder (contains config/db/etc.)
+instance/
+
+#ignores quiz folder
+/quiz/
