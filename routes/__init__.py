@@ -11,3 +11,5 @@ from . import route_register
 from . import route_welcome
 from . import route_matching
 from . import profile_picture
+from . import route_quiz
+from . import route_quizresult
