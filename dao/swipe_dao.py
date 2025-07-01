@@ -1,5 +1,6 @@
 from models import Swipe
 from db import db
+from datetime import date
 
 class swipe_dao:
     @classmethod
@@ -7,12 +8,12 @@ class swipe_dao:
         return Swipe.query.filter_by(swiper_id=user_id).all()
 
     @classmethod
-    def create_swipe(cls, swiper_id, swiped_id, swipe_type, swiped_at, match_generated=False):
+    def create_swipe(cls, swiper_id, swiped_id, swipe_type, match_generated=False):
         swipe = Swipe(
             swiper_id=swiper_id,
             swiped_id=swiped_id,
             swipe_type=swipe_type,
-            swiped_at=swiped_at,
+            swiped_at=date.today(),
             match_generated=match_generated
         )
         db.session.add(swipe)
