@@ -5,3 +5,4 @@ from wtforms.fields import SubmitField
 class CreateMatchingForm(FlaskForm): 
     yes = SubmitField("Let's Connect")
     no = SubmitField('Not a Fit')
+    back = SubmitField('Go back')

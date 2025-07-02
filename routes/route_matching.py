@@ -24,4 +24,6 @@ def matching():
           elif form.no.data:
                swipe_dao.create_swipe(swiper_id= curr_user_id,swiped_id=user.user_id,swipe_type='dislike')
                return redirect(url_for('main.matching',user_id=curr_user_id))
+          elif form.back.data:
+               return redirect(url_for('main.welcome'))
      return render_template('matching.html', user=user,age=age,personality_sore=personality_sore,form=form)
