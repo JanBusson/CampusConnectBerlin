@@ -3,6 +3,7 @@ from . import main_bp
 from forms.form_login import CreateLoginForm
 from dao.match_dao import match_dao
 from dao.user_dao import user_dao
+from models import Match
 
 @main_bp.route('/my_matches', methods=['GET', 'POST']) 
 def my_matches():
