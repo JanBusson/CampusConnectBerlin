@@ -12,4 +12,5 @@ class CreateRegisternForm(FlaskForm):
     birthday = DateField('Date of Birth', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
     profilePic = FileField('Profile Picture', validators=[DataRequired(), FileAllowed(['jpg', 'jpeg', 'png'], 'Nur JPG und PNG Bilder sind erlaubt!') ])
+    description = StringField('Description', [DataRequired(), Length(min=5)])
     submit = SubmitField('Finish')

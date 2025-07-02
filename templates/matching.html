@@ -5,12 +5,13 @@
     {% block title %} 
     
         {{user.name}}, {{age}}
+        <br> {{user.university.name}}
 
     {% endblock %}
     </h2>
 {% endblock %}
 
 {% block content %}
-<p>Page not found</p>
 <img src="{{ url_for('main.profile_picture', user_id=user.user_id) }}" alt="Profilbild" width="200" height="200">
+<p> {{user.description}} </p>
 {% endblock %}
