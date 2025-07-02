@@ -1,6 +1,7 @@
 import json
 from db import db
 from models import University
+from app import app
 
 # Berliner Hochschulen mit Geo-Koordinaten
 berliner_hochschulen = [
@@ -19,9 +20,10 @@ berliner_hochschulen = [
     {"name": "Bard College Berlin", "short_name": "Bard Berlin", "location": json.dumps({"lat": 52.5678, "lon": 13.4502})},
 ]
 
-for eintrag in berliner_hochschulen:
-    uni = University(**eintrag)
-    db.session.add(uni)
-
-db.session.commit()
+with app.app_context():
+    for eintrag in berliner_hochschulen:
+        uni = University(**eintrag)
+        db.session.add(uni)
+    db.session.commit()
+    
 print("Berliner Hochschulen mit Koordinaten erfolgreich eingefügt.")

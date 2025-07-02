@@ -2,8 +2,14 @@ from models import Match, Swipe, User
 from db import db
 from datetime import date
 from services.match_service import MatchService
+from sqlalchemy.sql.expression import func
 
 class match_dao:
+
+    @classmethod
+    def get_random_user(cls, current_user_id):
+        return User.query.filter(User.user_id != current_user_id).order_by(func.random()).first()
+
     @classmethod
     def get_all_for_uid(cls, user_id):
         return Match.query.filter(
