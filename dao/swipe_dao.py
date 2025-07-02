@@ -14,7 +14,7 @@ class swipe_dao:
             swiped_id=swiped_id,
             swipe_type=swipe_type,
             swiped_at=date.today(),
-            match_generated=match_generated
+            #match_generated=match_generated raus genommen wegen Fehler
         )
         db.session.add(swipe)
         db.session.commit()

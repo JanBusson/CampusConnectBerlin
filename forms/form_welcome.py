@@ -6,6 +6,6 @@ class CreateWelcomeForm(FlaskForm):
     #Felder für die Eingabe beim Login
     find_matches = SubmitField('Find Matches')
     friend_suggestions = SubmitField('Friend Suggestions')
-    my_friends = SubmitField('My Friends')
+    my_matches = SubmitField('My Matches')
     
     

@@ -13,12 +13,12 @@ def welcome():
         
         #Reaktion auf User Input
         if form.validate_on_submit():
-          if form.find_matches.data:
-            return redirect(url_for('main.matching',user_id=user.user_id))
-        elif form.friend_suggestions.data:
-            return redirect(url_for('main.friend_suggestions'))
-#        elif form.my_matches.data:
-#            return redirect(url_for('main.register'))
+            if form.find_matches.data:
+                return redirect(url_for('main.matching',user_id=user.user_id))
+            elif form.my_matches.data:
+                return redirect(url_for('main.my_matches'))
+            elif form.friend_suggestions.data:
+                return redirect(url_for('main.friend_suggestions'))
         
         return render_template('welcome.html',form=form,user=user)
     else:
