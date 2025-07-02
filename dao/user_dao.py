@@ -23,7 +23,7 @@ class user_dao:
         new_user = User(
             name=name,
             email=email,
-            password=password,
+            password=hashed_password,
             birth_date=birth_date,
             uni_id=uni_id,
             profile_picture=profile_picture,
