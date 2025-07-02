@@ -1,6 +1,5 @@
 from datetime import date
 
-#Jan
 def calculate_age(birth_date):
     today = date.today()
     
