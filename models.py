@@ -50,3 +50,6 @@ class Match(db.Model):
     compatibility = db.Column(db.Float)
     status = db.Column(db.Text)  # e.g., 'pending', 'accepted'
     matched_at = db.Column(db.Date)
+
+    user1 = db.relationship('User', foreign_keys=[user1_id], backref='matches_as_user1')
+    user2 = db.relationship('User', foreign_keys=[user2_id], backref='matches_as_user2')
