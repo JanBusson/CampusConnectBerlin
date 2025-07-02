@@ -14,5 +14,17 @@
 
 {% block content %}
 <img src="{{ url_for('main.profile_picture', user_id=user.user_id) }}" alt="Profilbild" width="200" height="200">
-<p> {{user.description}} </p>
+
+<div>
+ {{user.description}}
+</div>
+<div><form method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.yes(class="btn btn-success") }}
+        {{ form.no(class="btn btn-danger") }}
+    </div>
+</form>
+<div>
+
 {% endblock %}

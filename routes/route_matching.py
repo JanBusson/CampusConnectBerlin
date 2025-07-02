@@ -1,6 +1,6 @@
 #zeigt ein User Profil
 from . import main_bp
-from flask import render_template, session
+from flask import render_template, session, redirect, url_for
 from dao.user_dao import user_dao
 from dao.match_dao import match_dao
 from dao.personality_dao import personality_dao
@@ -14,6 +14,10 @@ def matching():
      age = calculate_age(user.birth_date)
      personality_sore = personality_dao.get_type_by_uid(user.user_id)
      form=CreateMatchingForm()
+     
      if form.validate_on_submit():
-          return
+          if form.yes.data:
+               return redirect(url_for('main.matching',user_id=curr_user_id))
+          elif form.no.data:
+               return redirect(url_for('main.matching',user_id=curr_user_id))
      return render_template('matching.html', user=user,age=age,personality_sore=personality_sore,form=form)

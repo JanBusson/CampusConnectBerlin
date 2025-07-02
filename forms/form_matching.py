@@ -3,5 +3,5 @@ from wtforms.fields import SubmitField
 
 #Lädt Match
 class CreateMatchingForm(FlaskForm): 
-    submit = SubmitField("Let's Connect")
-    submit = SubmitField('Not a Fit')
+    yes = SubmitField("Let's Connect")
+    no = SubmitField('Not a Fit')
