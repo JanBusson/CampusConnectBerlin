@@ -18,13 +18,12 @@ class user_dao:
     @classmethod
     def create_user(cls, name, email, password, birth_date, uni_id, profile_picture, description):
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-
         password=hashed_password.decode('utf-8')
 
         new_user = User(
             name=name,
             email=email,
-            password=hashed_password,
+            password=password,
             birth_date=birth_date,
             uni_id=uni_id,
             profile_picture=profile_picture,
