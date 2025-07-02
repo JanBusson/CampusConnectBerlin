@@ -5,9 +5,7 @@ from wtforms.fields import SubmitField, StringField
 class CreateWelcomeForm(FlaskForm): 
     #Felder für die Eingabe beim Login
     find_matches = SubmitField('Find Matches')
-    # Filter nicht entsprechend dem Sinn der App?
-    #TODO etwas in Richtung rate my matches für die Auswertung der Kompatibilität => weights setzen
-    set_filters = SubmitField('Set Filters')
-    my_matches = SubmitField('My Matches')
+    friend_suggestions = SubmitField('Friend Suggestions')
+    my_friends = SubmitField('My Friends')
     
     

@@ -13,3 +13,4 @@ from . import route_matching
 from . import profile_picture
 from . import route_quiz
 from . import route_quizresult
+from . import route_friend_suggestions

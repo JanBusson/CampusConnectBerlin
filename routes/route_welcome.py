@@ -15,8 +15,8 @@ def welcome():
         if form.validate_on_submit():
           if form.find_matches.data:
             return redirect(url_for('main.matching',user_id=user.user_id))
-#        elif form.set_filters.data:
-#            return redirect(url_for('main.register'))
+        elif form.friend_suggestions.data:
+            return redirect(url_for('main.friend_suggestions'))
 #        elif form.my_matches.data:
 #            return redirect(url_for('main.register'))
         
