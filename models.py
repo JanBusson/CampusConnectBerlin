@@ -41,7 +41,6 @@ class Swipe(db.Model):
     swiped_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     swipe_type = db.Column(db.Text)  # e.g., 'like' or 'dislike'
     swiped_at = db.Column(db.Date)
-    profile_picture = db.Column(db.LargeBinary, nullable=False)
 
 class Match(db.Model):
     __tablename__ = 'match'

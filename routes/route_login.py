@@ -1,4 +1,4 @@
-from flask import render_template,redirect, url_for, flash
+from flask import render_template,redirect, url_for, flash, session
 from . import main_bp
 from forms.form_login import CreateLoginForm
 from dao.user_dao import user_dao
@@ -16,7 +16,8 @@ def login():
         user = user_dao.check_user_credentials(email,password)
 
         if user:
-            return redirect(url_for('main.welcome',user_id=user.user_id))
+            session['user_id']=user.user_id
+            return redirect(url_for('main.welcome'))
         else:
             flash('Login fehlgeschlagen. Bitte überprüfe Benutzername und Passwort.')
             return redirect(url_for('main.login'))
