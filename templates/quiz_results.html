@@ -37,5 +37,9 @@
 {% else %}
   <p>We don't have a description yet for this personality type.</p>
 {% endif %}
+<!-- hier wird nach dem Test die Weiterleitung zur Welcome Page ermöglicht -->
+<a href="{{ url_for('main.welcome') }}">
+    <button>Continue</button>
+</a>
 </body>
 </html>

@@ -1,11 +1,12 @@
-from flask import render_template, abort, redirect, url_for
+from flask import render_template, abort, redirect, url_for, session
 from . import main_bp
 from dao.user_dao import user_dao
 from forms.form_welcome import CreateWelcomeForm
 
-@main_bp.route('/welcome/<int:user_id>', methods=['GET', 'POST'])
-def welcome(user_id):
+@main_bp.route('/welcome', methods=['GET', 'POST'])
+def welcome():
     form=CreateWelcomeForm()
+    user_id = session.get('user_id')
     user = user_dao.get_uid(user_id)
     #Welcome Seite mit entsprechendem User
     if user:

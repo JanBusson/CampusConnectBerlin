@@ -138,7 +138,7 @@ information = {
     }
 }
 
-@main_bp.route('/results', methods=['POST'])
+@main_bp.route('/quiz_results', methods=['POST'])
 def results():
     #zählen
     vector_ei = sum([int(request.form[f'ei_q{i}']) for i in range(1, 4)])
@@ -170,4 +170,4 @@ def results():
         db.session.add(result)
         db.session.commit()
 
-    return render_template('results.html', mbti_type=mbti_type, information=personality_info)
+    return render_template('quiz_results.html', mbti_type=mbti_type, information=personality_info)

@@ -17,7 +17,7 @@ def login():
 
         if user:
             session['user_id']=user.user_id
-            return redirect(url_for('main.welcome',user_id=user.user_id))
+            return redirect(url_for('main.welcome'))
         else:
             flash('Login fehlgeschlagen. Bitte überprüfe Benutzername und Passwort.')
             return redirect(url_for('main.login'))

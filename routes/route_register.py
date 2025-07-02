@@ -26,6 +26,6 @@ def register():
         #den neune Nutzer mit den Eingaben anlegen
         new_user = user_dao.create_user(name=name,email=email,password=hashed_pw,uni_id=university_id,birth_date=birthday,profile_picture=profile_picture,description=description)
         session['user_id']=new_user.user_id
-        return redirect(url_for('main.welcome',user_id=new_user.user_id))
+        return redirect(url_for('main.quiz'))
 
     return render_template('register.html', form=form)
