@@ -92,15 +92,16 @@
         }
 </style>
 
-
-
 <h1>Personality Quiz</h1>
 <form method="POST" action="/quiz_results">
 
+<!--#5 Fragen für jeweils 4 Dimensionen
+HINWEIS: KI GENERIERTER CODE FÜR DIE ERWEITERUNG DER FRAGEN: UNTER https://chatgpt.com/share/68665c2d-1570-8000-9473-31b8d751732e ZU FINDEN
+#EXTRAVERTED VS INTROVERTED-->
 <div class="question">
-  <p>1. In a social gathering, do you feel more energized by interacting with a large group of people or by having one-on-one conversations?</p>
+  <p>1. At a party, do you prefer to be actively social or observe from the sidelines?</p>
   <div class="scale">
-    <span class="label-left">Large group interactions</span>
+    <span class="label-left">Actively social</span>
     <div class="scale-options">
       <label><input type="radio" name="ei_q1" value="3" required><span></span></label>
       <label><input type="radio" name="ei_q1" value="2"><span></span></label>
@@ -110,14 +111,14 @@
       <label><input type="radio" name="ei_q1" value="-2"><span></span></label>
       <label><input type="radio" name="ei_q1" value="-3"><span></span></label>
     </div>
-    <span class="label-right">One-on-one conversations</span>
+    <span class="label-right">Observe quietly</span>
   </div>
 </div>
 
 <div class="question">
-  <p>2. Do you prefer to be the center of attention or to observe from the sidelines?</p>
+  <p>2. Do you enjoy being the center of attention?</p>
   <div class="scale">
-    <span class="label-left">Center of attention</span>
+    <span class="label-left">Yes</span>
     <div class="scale-options">
       <label><input type="radio" name="ei_q2" value="3" required><span></span></label>
       <label><input type="radio" name="ei_q2" value="2"><span></span></label>
@@ -127,14 +128,14 @@
       <label><input type="radio" name="ei_q2" value="-2"><span></span></label>
       <label><input type="radio" name="ei_q2" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Observe from sidelines</span>
+    <span class="label-right">Prefer staying unnoticed</span>
   </div>
 </div>
 
 <div class="question">
-  <p>3. When meeting new people, do you usually start conversations or wait for others?</p>
+  <p>3. In your free time, do you seek out social activities or prefer solitude?</p>
   <div class="scale">
-    <span class="label-left">Start conversations</span>
+    <span class="label-left">Social activities</span>
     <div class="scale-options">
       <label><input type="radio" name="ei_q3" value="3" required><span></span></label>
       <label><input type="radio" name="ei_q3" value="2"><span></span></label>
@@ -144,15 +145,49 @@
       <label><input type="radio" name="ei_q3" value="-2"><span></span></label>
       <label><input type="radio" name="ei_q3" value="-3"><span></span></label>
     </div>
+    <span class="label-right">Alone time</span>
+  </div>
+</div>
+
+<div class="question">
+  <p>4. Are you energized by group discussions or personal reflection?</p>
+  <div class="scale">
+    <span class="label-left">Group discussions</span>
+    <div class="scale-options">
+      <label><input type="radio" name="ei_q4" value="3" required><span></span></label>
+      <label><input type="radio" name="ei_q4" value="2"><span></span></label>
+      <label><input type="radio" name="ei_q4" value="1"><span></span></label>
+      <label><input type="radio" name="ei_q4" value="0"><span></span></label>
+      <label><input type="radio" name="ei_q4" value="-1"><span></span></label>
+      <label><input type="radio" name="ei_q4" value="-2"><span></span></label>
+      <label><input type="radio" name="ei_q4" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Personal reflection</span>
+  </div>
+</div>
+
+<div class="question">
+  <p>5. Do you often start conversations or wait for others to initiate?</p>
+  <div class="scale">
+    <span class="label-left">Start conversations</span>
+    <div class="scale-options">
+      <label><input type="radio" name="ei_q5" value="3" required><span></span></label>
+      <label><input type="radio" name="ei_q5" value="2"><span></span></label>
+      <label><input type="radio" name="ei_q5" value="1"><span></span></label>
+      <label><input type="radio" name="ei_q5" value="0"><span></span></label>
+      <label><input type="radio" name="ei_q5" value="-1"><span></span></label>
+      <label><input type="radio" name="ei_q5" value="-2"><span></span></label>
+      <label><input type="radio" name="ei_q5" value="-3"><span></span></label>
+    </div>
     <span class="label-right">Wait for others</span>
   </div>
 </div>
 
-<!-- SN Dimension -->
+<!--SENSING VS INTUITION-->
 <div class="question">
-  <p>4. Do you focus more on facts and details or on ideas and possibilities?</p>
+  <p>6. Do you focus more on present facts or future possibilities?</p>
   <div class="scale">
-    <span class="label-left">Facts & details</span>
+    <span class="label-left">Present facts</span>
     <div class="scale-options">
       <label><input type="radio" name="sn_q1" value="3" required><span></span></label>
       <label><input type="radio" name="sn_q1" value="2"><span></span></label>
@@ -162,14 +197,14 @@
       <label><input type="radio" name="sn_q1" value="-2"><span></span></label>
       <label><input type="radio" name="sn_q1" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Ideas & possibilities</span>
+    <span class="label-right">Future possibilities</span>
   </div>
 </div>
 
 <div class="question">
-  <p>5. Do you prefer practical solutions or imaginative approaches?</p>
+  <p>7. Are you more detail-oriented or big-picture-focused?</p>
   <div class="scale">
-    <span class="label-left">Practical solutions</span>
+    <span class="label-left">Detail-oriented</span>
     <div class="scale-options">
       <label><input type="radio" name="sn_q2" value="3" required><span></span></label>
       <label><input type="radio" name="sn_q2" value="2"><span></span></label>
@@ -179,14 +214,14 @@
       <label><input type="radio" name="sn_q2" value="-2"><span></span></label>
       <label><input type="radio" name="sn_q2" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Imaginative approaches</span>
+    <span class="label-right">Big-picture</span>
   </div>
 </div>
 
 <div class="question">
-  <p>6. Do you trust experience more or intuition?</p>
+  <p>8. Do you prefer practical solutions or imaginative ideas?</p>
   <div class="scale">
-    <span class="label-left">Experience</span>
+    <span class="label-left">Practical</span>
     <div class="scale-options">
       <label><input type="radio" name="sn_q3" value="3" required><span></span></label>
       <label><input type="radio" name="sn_q3" value="2"><span></span></label>
@@ -196,13 +231,47 @@
       <label><input type="radio" name="sn_q3" value="-2"><span></span></label>
       <label><input type="radio" name="sn_q3" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Intuition</span>
+    <span class="label-right">Imaginative</span>
   </div>
 </div>
 
-<!-- TF Dimension -->
 <div class="question">
-  <p>7. Do you make decisions based on logic or on personal values?</p>
+  <p>9. Do you trust experience more than theoretical concepts?</p>
+  <div class="scale">
+    <span class="label-left">Experience</span>
+    <div class="scale-options">
+      <label><input type="radio" name="sn_q4" value="3" required><span></span></label>
+      <label><input type="radio" name="sn_q4" value="2"><span></span></label>
+      <label><input type="radio" name="sn_q4" value="1"><span></span></label>
+      <label><input type="radio" name="sn_q4" value="0"><span></span></label>
+      <label><input type="radio" name="sn_q4" value="-1"><span></span></label>
+      <label><input type="radio" name="sn_q4" value="-2"><span></span></label>
+      <label><input type="radio" name="sn_q4" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Theories</span>
+  </div>
+</div>
+
+<div class="question">
+  <p>10. Are you more realistic or imaginative when planning?</p>
+  <div class="scale">
+    <span class="label-left">Realistic</span>
+    <div class="scale-options">
+      <label><input type="radio" name="sn_q5" value="3" required><span></span></label>
+      <label><input type="radio" name="sn_q5" value="2"><span></span></label>
+      <label><input type="radio" name="sn_q5" value="1"><span></span></label>
+      <label><input type="radio" name="sn_q5" value="0"><span></span></label>
+      <label><input type="radio" name="sn_q5" value="-1"><span></span></label>
+      <label><input type="radio" name="sn_q5" value="-2"><span></span></label>
+      <label><input type="radio" name="sn_q5" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Imaginative</span>
+  </div>
+</div>
+
+<!--THINKING VS FEELING-->
+<div class="question">
+  <p>11. When making decisions, do you rely more on logic or emotions?</p>
   <div class="scale">
     <span class="label-left">Logic</span>
     <div class="scale-options">
@@ -214,14 +283,14 @@
       <label><input type="radio" name="tf_q1" value="-2"><span></span></label>
       <label><input type="radio" name="tf_q1" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Personal values</span>
+    <span class="label-right">Emotions</span>
   </div>
 </div>
 
 <div class="question">
-  <p>8. Do you focus more on fairness or compassion?</p>
+  <p>12. Do you value justice over compassion when resolving conflicts?</p>
   <div class="scale">
-    <span class="label-left">Fairness</span>
+    <span class="label-left">Justice</span>
     <div class="scale-options">
       <label><input type="radio" name="tf_q2" value="3" required><span></span></label>
       <label><input type="radio" name="tf_q2" value="2"><span></span></label>
@@ -236,9 +305,9 @@
 </div>
 
 <div class="question">
-  <p>9. Is it more important to be truthful or tactful?</p>
+  <p>13. Do you approach problems with objectivity or empathy?</p>
   <div class="scale">
-    <span class="label-left">Truthful</span>
+    <span class="label-left">Objectivity</span>
     <div class="scale-options">
       <label><input type="radio" name="tf_q3" value="3" required><span></span></label>
       <label><input type="radio" name="tf_q3" value="2"><span></span></label>
@@ -248,15 +317,49 @@
       <label><input type="radio" name="tf_q3" value="-2"><span></span></label>
       <label><input type="radio" name="tf_q3" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Tactful</span>
+    <span class="label-right">Empathy</span>
   </div>
 </div>
 
-<!-- JP Dimension -->
 <div class="question">
-  <p>10. Do you prefer a planned schedule or go with the flow?</p>
+  <p>14. Do you believe it's more important to be fair or to be kind?</p>
   <div class="scale">
-    <span class="label-left">Planned schedule</span>
+    <span class="label-left">Fair</span>
+    <div class="scale-options">
+      <label><input type="radio" name="tf_q4" value="3" required><span></span></label>
+      <label><input type="radio" name="tf_q4" value="2"><span></span></label>
+      <label><input type="radio" name="tf_q4" value="1"><span></span></label>
+      <label><input type="radio" name="tf_q4" value="0"><span></span></label>
+      <label><input type="radio" name="tf_q4" value="-1"><span></span></label>
+      <label><input type="radio" name="tf_q4" value="-2"><span></span></label>
+      <label><input type="radio" name="tf_q4" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Kind</span>
+  </div>
+</div>
+
+<div class="question">
+  <p>15. When giving feedback, are you usually direct or considerate of feelings?</p>
+  <div class="scale">
+    <span class="label-left">Direct</span>
+    <div class="scale-options">
+      <label><input type="radio" name="tf_q5" value="3" required><span></span></label>
+      <label><input type="radio" name="tf_q5" value="2"><span></span></label>
+      <label><input type="radio" name="tf_q5" value="1"><span></span></label>
+      <label><input type="radio" name="tf_q5" value="0"><span></span></label>
+      <label><input type="radio" name="tf_q5" value="-1"><span></span></label>
+      <label><input type="radio" name="tf_q5" value="-2"><span></span></label>
+      <label><input type="radio" name="tf_q5" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Considerate</span>
+  </div>
+</div>
+
+<!--JUDGING VS PERCEIVING-->
+<div class="question">
+  <p>16. Do you prefer having a clear plan or going with the flow?</p>
+  <div class="scale">
+    <span class="label-left">Clear plan</span>
     <div class="scale-options">
       <label><input type="radio" name="jp_q1" value="3" required><span></span></label>
       <label><input type="radio" name="jp_q1" value="2"><span></span></label>
@@ -271,9 +374,9 @@
 </div>
 
 <div class="question">
-  <p>11. Do you like to finish tasks early or keep things open-ended?</p>
+  <p>17. Are you more comfortable when tasks are structured or flexible?</p>
   <div class="scale">
-    <span class="label-left">Finish early</span>
+    <span class="label-left">Structured</span>
     <div class="scale-options">
       <label><input type="radio" name="jp_q2" value="3" required><span></span></label>
       <label><input type="radio" name="jp_q2" value="2"><span></span></label>
@@ -283,14 +386,14 @@
       <label><input type="radio" name="jp_q2" value="-2"><span></span></label>
       <label><input type="radio" name="jp_q2" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Open-ended</span>
+    <span class="label-right">Flexible</span>
   </div>
 </div>
 
 <div class="question">
-  <p>12. Do you prefer structure or flexibility in your daily life?</p>
+  <p>18. Do you find satisfaction in finishing tasks or exploring new options?</p>
   <div class="scale">
-    <span class="label-left">Structure</span>
+    <span class="label-left">Finishing tasks</span>
     <div class="scale-options">
       <label><input type="radio" name="jp_q3" value="3" required><span></span></label>
       <label><input type="radio" name="jp_q3" value="2"><span></span></label>
@@ -300,9 +403,44 @@
       <label><input type="radio" name="jp_q3" value="-2"><span></span></label>
       <label><input type="radio" name="jp_q3" value="-3"><span></span></label>
     </div>
-    <span class="label-right">Flexibility</span>
+    <span class="label-right">Exploring new</span>
   </div>
 </div>
+
+<div class="question">
+  <p>19. Do you like making to-do lists or acting spontaneously?</p>
+  <div class="scale">
+    <span class="label-left">To-do lists</span>
+    <div class="scale-options">
+      <label><input type="radio" name="jp_q4" value="3" required><span></span></label>
+      <label><input type="radio" name="jp_q4" value="2"><span></span></label>
+      <label><input type="radio" name="jp_q4" value="1"><span></span></label>
+      <label><input type="radio" name="jp_q4" value="0"><span></span></label>
+      <label><input type="radio" name="jp_q4" value="-1"><span></span></label>
+      <label><input type="radio" name="jp_q4" value="-2"><span></span></label>
+      <label><input type="radio" name="jp_q4" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Spontaneously</span>
+  </div>
+</div>
+
+<div class="question">
+  <p>20. Are you more decisive or open to changes in plans?</p>
+  <div class="scale">
+    <span class="label-left">Decisive</span>
+    <div class="scale-options">
+      <label><input type="radio" name="jp_q5" value="3" required><span></span></label>
+      <label><input type="radio" name="jp_q5" value="2"><span></span></label>
+      <label><input type="radio" name="jp_q5" value="1"><span></span></label>
+      <label><input type="radio" name="jp_q5" value="0"><span></span></label>
+      <label><input type="radio" name="jp_q5" value="-1"><span></span></label>
+      <label><input type="radio" name="jp_q5" value="-2"><span></span></label>
+      <label><input type="radio" name="jp_q5" value="-3"><span></span></label>
+    </div>
+    <span class="label-right">Open to changes</span>
+  </div>
+</div>
+
 
 <button type="submit">See your personality type</button>
 </form>
