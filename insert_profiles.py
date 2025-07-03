@@ -100,16 +100,16 @@ users = [
 
 # Persönlichkeitsergebnisse
 results = [
-    PersonalityResult(result_id=1, user_id=1, vec_ei=0.21, vec_sn=0.34, vec_tf=0.39, vec_jp=0.78, mbti_type='INFJ', completed_at=date(2025, 6, 20)),
-    PersonalityResult(result_id=2, user_id=2, vec_ei=0.89, vec_sn=0.77, vec_tf=0.64, vec_jp=0.12, mbti_type='ESTP', completed_at=date(2025, 6, 18)),
-    PersonalityResult(result_id=3, user_id=3, vec_ei=0.18, vec_sn=0.42, vec_tf=0.27, vec_jp=0.51, mbti_type='INFP', completed_at=date(2025, 6, 22)),
-    PersonalityResult(result_id=4, user_id=4, vec_ei=0.32, vec_sn=0.68, vec_tf=0.71, vec_jp=0.82, mbti_type='ISTJ', completed_at=date(2025, 6, 19)),
-    PersonalityResult(result_id=5, user_id=5, vec_ei=0.86, vec_sn=0.38, vec_tf=0.29, vec_jp=0.35, mbti_type='ENFP', completed_at=date(2025, 6, 21)),
-    PersonalityResult(result_id=6, user_id=6, vec_ei=0.27, vec_sn=0.66, vec_tf=0.33, vec_jp=0.79, mbti_type='ISFJ', completed_at=date(2025, 6, 23)),
-    PersonalityResult(result_id=7, user_id=7, vec_ei=0.12, vec_sn=0.53, vec_tf=0.81, vec_jp=0.76, mbti_type='INTJ', completed_at=date(2025, 6, 20)),
-    PersonalityResult(result_id=8, user_id=8, vec_ei=0.75, vec_sn=0.69, vec_tf=0.32, vec_jp=0.71, mbti_type='ESFJ', completed_at=date(2025, 6, 19)),
-    PersonalityResult(result_id=9, user_id=9, vec_ei=0.84, vec_sn=0.41, vec_tf=0.54, vec_jp=0.29, mbti_type='ENTP', completed_at=date(2025, 6, 18)),
-    PersonalityResult(result_id=10, user_id=10, vec_ei=0.35, vec_sn=0.72, vec_tf=0.67, vec_jp=0.25, mbti_type='ISTP', completed_at=date(2025, 6, 17)),
+    PersonalityResult(result_id=1, user_id=1, vec_ei=-1.74, vec_sn=-0.96, vec_tf=-0.66, vec_jp=1.68, mbti_type='INFJ', completed_at=date(2025, 6, 20)),
+    PersonalityResult(result_id=2, user_id=2, vec_ei=2.34, vec_sn=1.62, vec_tf=0.84, vec_jp=-2.28, mbti_type='ESTP', completed_at=date(2025, 6, 18)),
+    PersonalityResult(result_id=3, user_id=3, vec_ei=-1.92, vec_sn=-0.48, vec_tf=-1.38, vec_jp=0.06, mbti_type='INFP', completed_at=date(2025, 6, 22)),
+    PersonalityResult(result_id=4, user_id=4, vec_ei=-1.08, vec_sn=1.08, vec_tf=1.26, vec_jp=1.92, mbti_type='ISTJ', completed_at=date(2025, 6, 19)),
+    PersonalityResult(result_id=5, user_id=5, vec_ei=2.16, vec_sn=-0.72, vec_tf=-1.26, vec_jp=-0.90, mbti_type='ENFP', completed_at=date(2025, 6, 21)),
+    PersonalityResult(result_id=6, user_id=6, vec_ei=-1.38, vec_sn=0.96, vec_tf=-1.02, vec_jp=1.74, mbti_type='ISFJ', completed_at=date(2025, 6, 23)),
+    PersonalityResult(result_id=7, user_id=7, vec_ei=-2.28, vec_sn=0.18, vec_tf=1.86, vec_jp=1.56, mbti_type='INTJ', completed_at=date(2025, 6, 20)),
+    PersonalityResult(result_id=8, user_id=8, vec_ei=1.50, vec_sn=1.14, vec_tf=-1.08, vec_jp=1.26, mbti_type='ESFJ', completed_at=date(2025, 6, 19)),
+    PersonalityResult(result_id=9, user_id=9, vec_ei=2.04, vec_sn=-0.54, vec_tf=0.24, vec_jp=-1.26, mbti_type='ENTP', completed_at=date(2025, 6, 18)),
+    PersonalityResult(result_id=10, user_id=10, vec_ei=-0.90, vec_sn=1.32, vec_tf=1.02, vec_jp=-1.50, mbti_type='ISTP', completed_at=date(2025, 6, 17)),
 ]
 
 # In DB einfügen
