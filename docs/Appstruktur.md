@@ -1,6 +1,6 @@
 ---
 title: Struktur der App
-
+nav_order: 3
 ---
 
 # Struktur der Anwendung
