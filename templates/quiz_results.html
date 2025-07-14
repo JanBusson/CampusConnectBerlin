@@ -1,45 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Your Personality Result</title>
-    <style>
-        body {
-            font-family: 'Palanquin', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-            padding-top: 100px;
-        }
-        .result-box {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
 
-<div class="result-box">
-    <h1>Your MBTI Type is:</h1>
-    <h2>{{ mbti_type }}</h2>
+{% block content %}
+<div class="container py-5">
+  <div class="card shadow-lg rounded-4 text-center">
+    <div class="card-body p-5">
+      <h1 class="card-title mb-4">Your MBTI Type is:</h1>
+      <h2 class="display-4 fw-bold mb-4">{{ mbti_type }}</h2>
+
+      {% if information %}
+        <h3 class="mb-3">{{ information.summary }}</h3>
+        <p><strong>You are:</strong> {{ information.ei }}</p>
+        <p><strong>You are:</strong> {{ information.sn }}</p>
+        <p><strong>You are more in tune with:</strong> {{ information.tf }}</p>
+        <p><strong>You might be rather:</strong> {{ information.jp }}</p>
+        <p class="mt-4"><strong>Overall Summary of your Personality:</strong> {{ information.sum }}</p>
+      {% else %}
+        <p class="text-muted">We don't have a description yet for this personality type.</p>
+      {% endif %}
+
+      <a href="{{ url_for('main.welcome') }}" class="btn btn-primary mt-4">
+        Continue
+      </a>
+    </div>
+  </div>
 </div>
-
-{% if information %}
-  <h2>{{ information.summary }}</h2>
-  <p><strong>You are </strong> {{ information.ei }}</p>
-  <p><strong>You are </strong> {{ information.sn }}</p>
-  <p><strong>You are more in tune with </strong> {{ information.tf }}</p>
-  <p><strong>You might be rather </strong> {{ information.jp }}</p>
-  <p><strong>Overall Summary of your Personality:</strong> {{ information.sum }}</p>
-{% else %}
-  <p>We don't have a description yet for this personality type.</p>
-{% endif %}
-<!-- hier wird nach dem Test die Weiterleitung zur Welcome Page ermöglicht -->
-<a href="{{ url_for('main.welcome') }}">
-    <button>Continue</button>
-</a>
-</body>
-</html>
+{% endblock %}
