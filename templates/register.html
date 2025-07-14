@@ -3,48 +3,51 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-    <h2>Register</h2>
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Register</h2>
 
-    <form method="POST"  enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
 
-        <div>
-            {{ form.name.label }}
-            {{ form.name(size=32) }}
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control", size=32) }}
         </div>
 
-        <div>
-            {{ form.email.label }}
-            {{ form.email(size=32) }}
+        <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", size=32) }}
         </div>
 
-        <div>
-            {{ form.university.label }}
-            {{ form.university() }}
+        <div class="mb-3">
+            {{ form.university.label(class="form-label") }}
+            {{ form.university(class="form-select") }}
         </div>
 
-        <div>
-            {{ form.birthday.label }}
-            {{ form.birthday(size=32) }}
+        <div class="mb-3">
+            {{ form.birthday.label(class="form-label") }}
+            {{ form.birthday(class="form-control", size=32) }}
         </div>
 
-        <div>
-            {{ form.password.label }}
-            {{ form.password(size=32) }}
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", size=32) }}
         </div>
 
-        <div>
-            {{ form.profilePic.label }}
-            {{ form.profilePic(accept="image/*") }}
+        <div class="mb-3">
+            {{ form.profilePic.label(class="form-label") }}
+            {{ form.profilePic(class="form-control", accept="image/*") }}
         </div>
 
-        <div>
-            {{ form.description.label }}
-            {{ form.description(size=32) }}
+        <div class="mb-3">
+            {{ form.description.label(class="form-label") }}
+            {{ form.description(class="form-control", rows=3) }}
         </div>
 
-        <div>
-            {{ form.submit() }}
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
+</div>
 {% endblock %}
+

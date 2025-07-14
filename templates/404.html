@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>{% block title %}404{% endblock %}</h2>
+  <h2 class="text-warning">{% block title %}404 - Page Not Found{% endblock %}</h2>
 {% endblock %}
 
 {% block content %}
-<p>Page not found</p>
+  <div class="alert alert-warning" role="alert">
+    <p>Page not found.</p>
+  </div>
 {% endblock %}

@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>Welcome, {{ user.name }} 💕</h2>
+    <h2 class="text-center mt-4">Welcome, {{ user.name }} 💕</h2>
 {% endblock %}
 
 {% block content %}
-<form method="POST">
-    {{ form.hidden_tag() }}
+<div class="container d-flex flex-column align-items-center mt-5">
+    <form method="POST" class="w-100" style="max-width: 400px;">
+        {{ form.hidden_tag() }}
 
-    <div>
-        {{ form.find_matches}}
-    </div>
+        <div class="d-grid mb-3">
+            {{ form.find_matches(class="btn btn-success btn-lg") }}
+        </div>
 
-    <div>{{ form.my_matches() }}</div>
-</form>
+        <div class="d-grid">
+            {{ form.my_matches(class="btn btn-outline-primary btn-lg") }}
+        </div>
+    </form>
+</div>
 {% endblock %}

@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>{% block title %}500{% endblock %}</h2>
+  <h2 class="text-danger">{% block title %}500 - Internal Server Error{% endblock %}</h2>
 {% endblock %}
 
 {% block content %}
-<p>Internal server error - try again later</p>
+  <div class="alert alert-danger" role="alert">
+    <p>Internal server error - please try again later.</p>
+  </div>
 {% endblock %}

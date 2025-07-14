@@ -1,33 +1,38 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>
-    {% block title %} 
-    
-        {{user.name}}, {{age}}
-        <br> {{user.university.name}}
-        <br> {{personality_sore}}
-
-    {% endblock %}
+    <h2 class="text-center mt-4">
+        {% block title %}
+            {{ user.name }}, {{ age }}<br>
+            {{ user.university.name }}<br>
+            {{ personality_sore }}
+        {% endblock %}
     </h2>
 {% endblock %}
 
 {% block content %}
-<img src="{{ url_for('main.profile_picture', user_id=user.user_id) }}" alt="Profilbild" width="200" height="200">
+<div class="container mt-4" style="max-width: 600px;">
 
-<div>
- {{user.description}}
+    <div class="text-center mb-3">
+        <img src="{{ url_for('main.profile_picture', user_id=user.user_id) }}" alt="Profilbild" class="rounded-circle img-thumbnail" width="200" height="200">
+    </div>
+
+    <div class="mb-4 text-center">
+        <p class="lead">{{ user.description }}</p>
+    </div>
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        <div class="d-flex justify-content-center gap-3 mb-3">
+            {{ form.yes(class="btn btn-success") }}
+            {{ form.no(class="btn btn-danger") }}
+        </div>
+
+        <div class="text-center">
+            {{ form.back(class="btn btn-secondary") }}
+        </div>
+    </form>
+
 </div>
-<div><form method="post">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.yes(class="btn btn-success") }}
-        {{ form.no(class="btn btn-danger") }}
-    </div>
-    <div>
-        {{ form.back }}
-    </div>
-</form>
-<div>
-
 {% endblock %}

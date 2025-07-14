@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2>
+    <h2 class="text-center mt-4">
         Here are your Matches, {{ currUser.name }}
     </h2>
 {% endblock %}
 
 {% block content %}
-<ul>
+<div class="container mt-4" style="max-width: 700px;">
   {% for match in matches %}
     {% if match.user1.user_id == currUser.user_id %}
       {% set other = match.user2 %}
@@ -15,11 +15,22 @@
       {% set other = match.user1 %}
     {% endif %}
 
-    <li>
-      {{ other.name }} – compatibility: {{ (match.compatibility * 100)|round(0) }}%<br>
-      Status: {{ match.status }}<br>
-      Matched at: {{ match.matched_at.strftime('%Y-%m-%d') }}
-    </li>
+    <div class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{ other.name }}</h5>
+        <p class="card-text">
+          <strong>Compatibility:</strong> {{ (match.compatibility * 100)|round(0) }}%<br>
+          <strong>Status:</strong> {{ match.status }}<br>
+          <strong>Matched at:</strong> {{ match.matched_at.strftime('%Y-%m-%d') }}
+        </p>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+
+  {% if matches|length == 0 %}
+    <div class="alert alert-info text-center">
+      You have no matches yet. Check back soon!
+    </div>
+  {% endif %}
+</div>
 {% endblock %}

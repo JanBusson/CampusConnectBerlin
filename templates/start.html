@@ -3,12 +3,16 @@
 {% block title %}Campus Connect Berlin{% endblock %}
 
 {% block content %}
-    <div class="text-center">
-        <h1>Log in or register if you haven't</h1>
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            {{ form.login(class="btn btn-primary m-2") }}
-            {{ form.register(class="btn btn-secondary m-2") }}
-        </form>
-    </div>
+<div class="container d-flex flex-column align-items-center justify-content-center mt-5">
+    <h1 class="mb-4 text-center">Log in or register if you haven't</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="d-flex justify-content-center gap-3">
+            {{ form.login(class="btn btn-primary px-4") }}
+            {{ form.register(class="btn btn-outline-secondary px-4") }}
+        </div>
+    </form>
+</div>
 {% endblock %}
+
