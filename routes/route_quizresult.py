@@ -142,9 +142,9 @@ information = {
 def results():
     #zählen
     vector_ei = sum([int(request.form[f'ei_q{i}']) for i in range(1, 6)])
-    vector_sn = sum([int(request.form[f'sn_q{i}']) for i in range(1, 6)])
-    vector_tf = sum([int(request.form[f'tf_q{i}']) for i in range(1, 6)])
-    vector_jp = sum([int(request.form[f'jp_q{i}']) for i in range(1, 6)])
+    vector_sn = sum([int(request.form[f'sn_q{i}']) for i in range(6, 11)])
+    vector_tf = sum([int(request.form[f'tf_q{i}']) for i in range(11, 16)])
+    vector_jp = sum([int(request.form[f'jp_q{i}']) for i in range(16, 21)])
 
     #MBTI berechnen
     ei = 'E' if vector_ei >= 0 else 'I'
