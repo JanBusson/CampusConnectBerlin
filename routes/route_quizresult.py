@@ -141,10 +141,10 @@ information = {
 @main_bp.route('/quiz_results', methods=['POST'])
 def results():
     #zählen
-    vector_ei = sum([int(request.form[f'ei_q{i}']) for i in range(1, 4)])
-    vector_sn = sum([int(request.form[f'sn_q{i}']) for i in range(1, 4)])
-    vector_tf = sum([int(request.form[f'tf_q{i}']) for i in range(1, 4)])
-    vector_jp = sum([int(request.form[f'jp_q{i}']) for i in range(1, 4)])
+    vector_ei = sum([int(request.form[f'ei_q{i}']) for i in range(1, 6)])
+    vector_sn = sum([int(request.form[f'sn_q{i}']) for i in range(1, 6)])
+    vector_tf = sum([int(request.form[f'tf_q{i}']) for i in range(1, 6)])
+    vector_jp = sum([int(request.form[f'jp_q{i}']) for i in range(1, 6)])
 
     #MBTI berechnen
     ei = 'E' if vector_ei >= 0 else 'I'
@@ -169,5 +169,8 @@ def results():
         )
         db.session.add(result)
         db.session.commit()
+
+        if not mbti_type:
+            return "Bad Request: MBTI type not provided.", 400
 
     return render_template('quiz_results.html', mbti_type=mbti_type, information=personality_info)
