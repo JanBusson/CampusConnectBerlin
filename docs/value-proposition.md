@@ -4,7 +4,7 @@ nav_order: 1
 ---
 
 {: .no_toc }
-# Value Proposition
+# Value proposition
 
 <details open markdown="block">
 {: .text-delta }
