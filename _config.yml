@@ -32,5 +32,11 @@ sidebar:
     children:
       - title: App Structure
         url: /technical-docs/app-structure.md
-      - title: Data Model
+      - title: App Behavior
+        url: /technical-docs/app-behavior.md
+      - title: Datenmodell
         url: /technical-docs/data-model.md
+      - title: API Reference
+        url: /technical-docs/api-reference.md
+      - title: Design Decisions
+        url: /technical-docs/design-decisions.md

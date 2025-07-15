@@ -3,7 +3,7 @@ title: Struktur der App
 nav_order: 1
 ---
 
-# Struktur der Anwendung
+# App Structure
 Um so strukturiert wie möglich zu arbeiten, haben wir unsere Datenstruktur, siehe im Folgendem, so aufgeteilt.
 
 **Ordner Struktur app/**
