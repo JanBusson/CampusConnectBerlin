@@ -13,7 +13,7 @@ Bestandteile:
 - [Value Proposition](value-proposition.md)
 - [Arbeitsteilung](Arbeitsteilung.md)
 - [Quellennutzung](Quellennutzung.md)
-- [Appstruktur](Appstruktur.md)
+- [Appstruktur](technical-docs/app-structure.md)
 
 ## Gruppenmitglieder
 
