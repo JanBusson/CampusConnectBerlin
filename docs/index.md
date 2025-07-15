@@ -18,8 +18,8 @@ Bestandteile:
 ## Gruppenmitglieder
 
 - Ailin Esenalieva, Matrikelnr: 77212022976
-- Jan Busson, Matrikelnr: 
-- Kaan Baskaya, Matrikelnr: 
+- Jan Busson, Matrikelnr:
+- Kaan Baskaya, Matrikelnr: 77212020253
 
 ## Eidesstattliche Erklärung
 
