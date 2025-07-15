@@ -4,6 +4,7 @@ description: Projekt im Rahmen des Moduls Full Stack Web Development von Kaan Ba
 
 mermaid:
   version: "10.5.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
+
 callouts:
   tip:
     title: 🤍 Tip
@@ -18,18 +19,18 @@ callouts:
     title: 💾 Download
     color: grey-dk
 
-    sidebar:
-      - title: Home
-        url: /index.md
-      - title: Value Proposition
-        url: /value-proposition.md
-      - title: Quellennutzung
-        url: /Quellennutzung.md
-      - title: Arbeitsteilung
-        url: /Arbeitsteilung.md
-      - title: Technical Docs
-        children:
-          - title: App Structure
-            url: /technical-docs/app-structure.md
-          - title: Data Model
-            url: /technical-docs/data-model.md
+sidebar:
+  - title: Home
+    url: /index.md
+  - title: Value Proposition
+    url: /value-proposition.md
+  - title: Quellennutzung
+    url: /Quellennutzung.md
+  - title: Arbeitsteilung
+    url: /Arbeitsteilung.md
+  - title: Technical Docs
+    children:
+      - title: App Structure
+        url: /technical-docs/app-structure.md
+      - title: Data Model
+        url: /technical-docs/data-model.md
