@@ -1,10 +1,7 @@
-remote_theme: just-the-docs/just-the-docs
 title: CampusConnect Berlin
-description: Projekt im Rahmen des Moduls Full Stack Web Development von Kaan Baskaya, Jan Busson und Ailin Esenalieva
-
+remote_theme: just-the-docs/just-the-docs
 mermaid:
-  version: "10.5.0"
-
+  version: "10.9.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
 callouts:
   tip:
     title: 🤍 Tip

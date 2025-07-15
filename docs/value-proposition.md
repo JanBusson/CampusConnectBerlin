@@ -1,4 +1,11 @@
-# Value Proposition
+---
+title: Value Proposition
+nav_order: 1
+---
+
+{: .no_toc }
+
+# Value proposition
 Unsere Web App hilft Studierenden in Berlin dabei, echte Freundschaften zu schließen. Statt nur Interessen abzufragen, setzen wir auf einen Persönlichkeitstest. Dieser bildet die Grundlage für passende Matches auf Basis von Persönlichkeitstypen.
 
 ## Zielgruppe
