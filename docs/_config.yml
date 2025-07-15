@@ -1,0 +1,20 @@
+remote_theme: just-the-docs/just-the-docs
+title: CampusConnect Berlin
+description: Projekt im Rahmen des Moduls Full Stack Web Development von Kaan Baskaya, Jan Busson und Ailin Esenalieva
+
+mermaid:
+  version: "10.5.0"
+
+callouts:
+  tip:
+    title: 🤍 Tip
+    color: purple
+  info:
+    title: ℹ️ Info
+    color: blue
+  attention:
+    title: ❕ Attention
+    color: yellow
+  download:
+    title: 💾 Download
+    color: grey-dk
