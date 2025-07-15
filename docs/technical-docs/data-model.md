@@ -111,4 +111,5 @@ FOREIGN KEY ("user2_id") REFERENCES user("user_id")
 ## Constraints und Beziehungen
 
 Die Datenbank stellt durch `NOT NULL`, `UNIQUE` und `FOREIGN KEY` Constraints sicher, dass Datensätze vollständig, eindeutig und korrekt verknüpft sind.  
+Zusätzlich existieren Beziehungen zwischen `User` ↔ `University`, `User` ↔ `PersonalityResult`, sowie untereinander in `Swipe` und `Match`.  
 Das Modell basiert auf SQLAlchemy und unterstützt die funktionalen Anforderungen der App vollständig.
