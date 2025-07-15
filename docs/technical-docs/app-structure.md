@@ -1,5 +1,5 @@
 ---
-title: App Structure
+title: Struktur der App
 parent: Technical Docs
 nav_order: 1
 ---
