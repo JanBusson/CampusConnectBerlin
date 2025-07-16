@@ -12,7 +12,6 @@ def register():
     if form.validate_on_submit():
     # Auslesen der Eingaben
         name = form.name.data
-        #TODO email unique checken
         email = form.email.data
         university_id = form.university.data
         birthday = form.birthday.data
