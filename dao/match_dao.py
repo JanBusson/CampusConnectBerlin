@@ -1,4 +1,4 @@
-from models import Match, Swipe, User
+from models import Match, Swipe, User, Message
 from db import db
 from datetime import date
 from services.match_service import MatchService
@@ -59,3 +59,20 @@ class match_dao:
         score = MatchService.calculate_compatibility(result1, result2)
 
         return cls.create_match(user1_id, user2_id, score, "pending", date.today())
+    
+    #Nachricht auslesen zwischen Matches
+    @classmethod
+    def get_messages_for_match(cls, match_id):
+        return Message.query.filter_by(match_id=match_id).order_by(Message.timestamp).all()
+
+    #Nachrichten schreiben
+    @classmethod
+    def save_message(cls, match_id, sender_id, text):
+        msg = Message(match_id=match_id, sender_id=sender_id, text=text)
+        db.session.add(msg)
+        db.session.commit()
+
+    #wird gebraucht bei Nachrichten
+    @classmethod
+    def get_by_id(cls, match_id):
+        return Match.query.get(match_id)

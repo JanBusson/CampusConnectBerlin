@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2 class="text-center mt-4">Chat with {{ other_user.name }}</h2>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 800px;">
+
+  <!-- Nachrichten anzeigen -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body" style="height: 400px; overflow-y: auto;" id="message-canvas">
+      {% for msg in messages %}
+        <div class="d-flex justify-content-between mb-3">
+            <!-- Linke Seite: Sender und Zeit -->
+            <div class="me-3" style="flex: 0 0 auto;">
+            <strong>{{ msg.sender.name }}</strong><br>
+            <div class="text-muted" style="font-size: 0.8em;">
+                {{ msg.timestamp.strftime('%Y-%m-%d %H:%M') }}
+            </div>
+            </div>
+
+            <!-- Rechte Seite: Nachricht -->
+            <div style="flex: 1;">
+            {{ msg.text }}
+            </div>
+        </div>
+      {% else %}
+        <p class="text-muted text-center">No messages yet. Start the conversation!</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Nachricht abschicken -->
+  <form method="POST" action="{{ url_for('main.chat_room', match_id=match_id) }}">
+    {{ form.hidden_tag() }}
+    <div class="input-group">
+      {{ form.message(class_='form-control', placeholder='Type your message...') }}
+      <button class="btn btn-primary" type="submit">{{ form.sned_message.label.text }}</button>
+    </div>
+  </form>
+
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from db import db
-from datetime import date
+from datetime import date, datetime
 
 class University(db.Model):
     __tablename__ = 'university'
@@ -53,3 +53,13 @@ class Match(db.Model):
 
     user1 = db.relationship('User', foreign_keys=[user1_id], backref='matches_as_user1')
     user2 = db.relationship('User', foreign_keys=[user2_id], backref='matches_as_user2')
+
+class Message(db.Model):
+    __tablename__ = 'message'
+    id = db.Column(db.Integer, primary_key=True)
+    match_id = db.Column(db.Integer, db.ForeignKey('match.match_id'), nullable=False)
+    sender_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
+    text = db.Column(db.Text, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.now) #<= automatisch aktuelle Zeit
+
+    sender = db.relationship('User', backref='sent_messages')
