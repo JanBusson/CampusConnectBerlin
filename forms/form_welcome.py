@@ -8,5 +8,6 @@ class CreateWelcomeForm(FlaskForm):
     #friend_suggestions = SubmitField('Friend Suggestions')
     my_matches = SubmitField('My Matches')
     my_chats = SubmitField('My Chats')
+    evaluate_match = SubmitField('Rate the fit 🤝🔥')
     
     

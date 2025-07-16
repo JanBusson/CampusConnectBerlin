@@ -76,3 +76,27 @@ class match_dao:
     @classmethod
     def get_by_id(cls, match_id):
         return Match.query.get(match_id)
+    
+    #für die Bewertung der Matches
+    @classmethod
+    def evaluate_match(cls, user_id, match_id, rating):
+        match = Match.query.get(match_id)
+        if not match:
+            raise ValueError("Match nicht gefunden.")
+
+        if match.user1_id == user_id:
+            if match.evaluated_by_user1:
+                raise ValueError("Schon bewertet.")
+            match.rating_by_user1 = int(rating)
+            match.evaluated_by_user1 = True
+
+        elif match.user2_id == user_id:
+            if match.evaluated_by_user2:
+                raise ValueError("Schon bewertet.")
+            match.rating_by_user2 = int(rating)
+            match.evaluated_by_user2 = True
+
+        else:
+            raise ValueError("User gehört nicht zum Match.")
+
+        db.session.commit()
