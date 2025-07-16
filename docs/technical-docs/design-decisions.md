@@ -5,9 +5,7 @@ nav_order: 5
 ---
 
 {: .no_toc }
-
 # Design Decisions
-
 
 <details open markdown="block">
 {: .text-delta }
@@ -15,8 +13,6 @@ nav_order: 5
 + TOC
 {: toc }
 </details>
-
----
 
 ## 1. Persönlichkeitsbasiertes Matching mit Vektor Distanz
 by [Kaan]
@@ -35,9 +31,7 @@ Wir haben stattdessen ein vektorbasiertes Matching Modell entwickelt. Auf Basis 
 
 Diese vierdimensionale Struktur erlaubt es, Persönlichkeitsprofile mathematisch als Vektoren zu sehen. Die Ähnlichkeit zweier User ergibt sich aus der euklidischen Distanz ihrer Vektoren:
 
-\[
-\text{Kompatibilität} = 1 - \frac{d}{\text{max}_d}
-\]
+Kompatibilität = 1 - (d / max_d)
 
 Die maximale Distanz (`max_distance`) beträgt 12, da jede Achse eine maximale Abweichung von 6 haben kann. Das Ergebnis ist ein Score zwischen 0 (sehr unähnlich) und 1 (perfect Match).
 
