@@ -51,6 +51,12 @@ class Match(db.Model):
     status = db.Column(db.Text)  # e.g., 'pending', 'accepted'
     matched_at = db.Column(db.Date)
 
+    #hier damit dei Möglichkeit besteht ein Match zu bewerten
+    evaluated_by_user1 = db.Column(db.Boolean, default=False)
+    evaluated_by_user2 = db.Column(db.Boolean, default=False)
+    rating_by_user1 = db.Column(db.Integer)
+    rating_by_user2 = db.Column(db.Integer)
+
     user1 = db.relationship('User', foreign_keys=[user1_id], backref='matches_as_user1')
     user2 = db.relationship('User', foreign_keys=[user2_id], backref='matches_as_user2')
 
