@@ -19,8 +19,10 @@ def welcome():
                 return redirect(url_for('main.my_matches'))
             #elif form.friend_suggestions.data:
             #   return redirect(url_for('main.friend_suggestions'))
-            elif form.my_chats:
+            elif form.my_chats.data:
                 return redirect(url_for('main.chat'))
+            elif form.evaluate_match.data:
+                return redirect(url_for('main.evaluate_match'))
         
         return render_template('welcome.html',form=form,user=user)
     else:
