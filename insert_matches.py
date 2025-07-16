@@ -1,8 +1,9 @@
 from db import db
 from datetime import date
-from models import Swipe
+from models import Swipe, Match
 from dao.match_dao import match_dao
 from app import app
+
 
 # Gegenseitige Likes → führen zu Matches
 match_pairs = [
@@ -42,3 +43,28 @@ with app.app_context():
             print(f"⚠️ No match created between {user1} and {user2}")
 
     print("✔️ Alle Swipes verarbeitet.")
+
+    # (nachdem alle Matches erstellt wurden…)
+
+    print("✔️ Alle Swipes verarbeitet.")
+
+    # Matches laden, z. B. die ersten 10 zur Bewertung auswählen
+    matches = Match.query.all()
+
+    for i, match in enumerate(matches):
+        # Bewertung nur für z. B. 70 % der Matches
+        if i % 4 == 0:
+            continue  # diesen Match unbewertet lassen
+
+        # Bewertung durch beide Nutzer (1–5 Sterne)
+        try:
+            match_dao.evaluate_match(match.user1_id, match.match_id, rating=(i % 5) + 1)
+        except Exception as e:
+            print(f"⚠️ Fehler bei Bewertung durch User {match.user1_id}: {e}")
+
+        try:
+            match_dao.evaluate_match(match.user2_id, match.match_id, rating=((i + 2) % 5) + 1)
+        except Exception as e:
+            print(f"⚠️ Fehler bei Bewertung durch User {match.user2_id}: {e}")
+
+    print("📝 Einige Matches wurden erfolgreich bewertet.")
