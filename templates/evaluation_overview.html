@@ -2,48 +2,63 @@
 
 {% block header %}
   <div class="text-center mt-4">
-    <h2>Evaluation aller Matches</h2>
+    <h2>Evaluation of All Matches</h2>
     <p>
-      Diese Übersicht zeigt den Compatibility Score, die vergebenen Bewertungen und hilft bei der Algorithmusverfeinerung.
+      This overview displays the compatibility scores, user-submitted ratings, and supports algorithm refinement.
     </p>
   </div>
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4" style="max-width: 800px;">
+<div class="container mt-4" style="max-width: 1000px;">
   {% if matches %}
-    {% for match in matches %}
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h4 class="card-title">
-            {{ match.user1.name }} 🤝 {{ match.user2.name }}
-          </h4>
-
-          <p><strong>Compatibility Score:</strong> {{ "%.2f"|format(match.compatibility) }}</p>
-
-          <p>
-            <strong>Bewertung von {{ match.user1.name }}:</strong>
+    <table class="table table-striped table-bordered shadow-sm">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Match ID</th>
+          <th scope="col">User 1</th>
+          <th scope="col">User 2</th>
+          <th scope="col">Compatibility Score</th>
+          <th scope="col">Rating by User 1</th>
+          <th scope="col">Rating by User 2</th>
+          <th scope="col">Average Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for match in matches %}
+        <tr>
+          <td>{{ match.match_id }}</td>
+          <td>{{ match.user1_name }}</td>
+          <td>{{ match.user2_name }}</td>
+          <td>{{ "%.2f"|format(match.compatibility) }}</td>
+          <td>
             {% if match.rating_by_user1 is not none %}
-              {{ match.rating_by_user1 }}/5
+              {{ match.rating_by_user1 / 5 }}
             {% else %}
-              <em>Keine Bewertung</em>
+              <em>No rating</em>
             {% endif %}
-          </p>
-
-          <p>
-            <strong>Bewertung von {{ match.user2.name }}:</strong>
+          </td>
+          <td>
             {% if match.rating_by_user2 is not none %}
-              {{ match.rating_by_user2 }}/5
+              {{ match.rating_by_user2 / 5 }}
             {% else %}
-              <em>Keine Bewertung</em>
+              <em>No rating</em>
             {% endif %}
-          </p>
-        </div>
-      </div>
-    {% endfor %}
+          </td>
+          <td>
+            {% if match.rating_by_user1 is not none and match.rating_by_user2 is not none %}
+              {{ ((match.rating_by_user1 + match.rating_by_user2) / 2) / 5 }}
+            {% else %}
+              <em>Not fully rated</em>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   {% else %}
     <div class="alert alert-info text-center">
-      Noch keine gespeicherten Matches zur Evaluation.
+      No saved matches available for evaluation.
     </div>
   {% endif %}
 </div>
