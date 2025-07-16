@@ -17,3 +17,4 @@ from . import route_quizresult
 from . import route_my_matches
 from . import route_chat
 from . import route_chat_room
+from . import route_evaluate_match
