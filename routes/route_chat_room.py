@@ -6,9 +6,14 @@ from dao.user_dao import user_dao
 from models import Match
 
 @main_bp.route('/chat/<int:match_id>', methods=['GET', 'POST']) 
-def chat_room():
-    user_id= session.get('user_id')
-    currUser = user_dao.get_uid(user_id)
-    matches = match_dao.get_all_for_uid(user_id=user_id)
+def chat_room(match_id):
+    user_id = session.get('user_id')
+    curr_user = user_dao.get_uid(user_id)
+    match = match_dao.get_by_id(match_id)
+
+    #Speichern des anderen Nutzers
+    other_user = match.user2 if match.user1.user_id == user_id else match.user1
+    #Nachrichten als Liste => in das Template laden
+    messages = match_dao.get_messages_for_match(match_id)
     
-    return render_template('chat_room.html',matches=matches,currUser=currUser)
+    return render_template('chat_room.html',curr_user=curr_user, other_user=other_user, messages=messages, match_id=match_id)
