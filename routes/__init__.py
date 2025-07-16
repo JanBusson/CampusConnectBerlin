@@ -13,6 +13,7 @@ from . import route_matching
 from . import profile_picture
 from . import route_quiz
 from . import route_quizresult
-from . import route_friend_suggestions
+#from . import route_friend_suggestions
 from . import route_my_matches
 from . import route_chat
+from . import c

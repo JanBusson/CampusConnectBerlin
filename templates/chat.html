@@ -2,7 +2,7 @@
 
 {% block header %}
     <h2 class="text-center mt-4">
-        Here are your Matches, {{ currUser.name }}
+        Here you can chat, {{ currUser.name }}
     </h2>
 {% endblock %}
 
@@ -17,12 +17,9 @@
 
     <div class="card mb-3 shadow-sm">
       <div class="card-body">
-        <h5 class="card-title">{{ other.name }}</h5>
-        <p class="card-text">
-          <strong>Compatibility:</strong> {{ (match.compatibility * 100)|round(0) }}%<br>
-          <strong>Status:</strong> {{ match.status }}<br>
-          <strong>Matched at:</strong> {{ match.matched_at.strftime('%Y-%m-%d') }}
-        </p>
+        <h4 class="card-title">{{ other.name }}</h4>
+        <a href="{{ url_for('main_bp.chat_room', match_id=match.match_id) }}" class="btn btn-primary mt-2">
+            Chat</a>
       </div>
     </div>
   {% endfor %}

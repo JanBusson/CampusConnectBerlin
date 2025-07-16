@@ -5,7 +5,8 @@ from wtforms.fields import SubmitField, StringField
 class CreateWelcomeForm(FlaskForm): 
     #Felder für die Eingabe beim Login
     find_matches = SubmitField('Find Matches')
-    friend_suggestions = SubmitField('Friend Suggestions')
+    #friend_suggestions = SubmitField('Friend Suggestions')
     my_matches = SubmitField('My Matches')
+    my_chats = SubmitField('My Chats')
     
     
