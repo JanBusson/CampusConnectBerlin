@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2 class="text-center mt-4">
+        Here are your Matches, {{ currUser.name }}
+    </h2>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 700px;">
+  {% for match in matches %}
+    {% if match.user1.user_id == currUser.user_id %}
+      {% set other = match.user2 %}
+    {% else %}
+      {% set other = match.user1 %}
+    {% endif %}
+
+    <div class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{ other.name }}</h5>
+        <p class="card-text">
+          <strong>Compatibility:</strong> {{ (match.compatibility * 100)|round(0) }}%<br>
+          <strong>Status:</strong> {{ match.status }}<br>
+          <strong>Matched at:</strong> {{ match.matched_at.strftime('%Y-%m-%d') }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+
+  {% if matches|length == 0 %}
+    <div class="alert alert-info text-center">
+      You have no body to chat with yet. Check back soon!
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
