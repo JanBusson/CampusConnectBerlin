@@ -5,9 +5,7 @@ nav_order: 5
 ---
 
 {: .no_toc }
-
 # Design Decisions
-
 
 <details open markdown="block">
 {: .text-delta }
@@ -15,8 +13,6 @@ nav_order: 5
 + TOC
 {: toc }
 </details>
-
----
 
 ## 1. Persönlichkeitsbasiertes Matching mit Vektor Distanz
 by [Kaan]
