@@ -12,9 +12,9 @@ nav_order: 3
 # Datenmodell
 
 Unsere Webapp zielt darauf ab, Freundschaften zwischen Studierenden durch persönlichkeitsbasiertes Matching zu fördern.  
-Key Features sind: Registrierung, Login, Speicherung von Personality Results, Swipen anderer User und Matches bei gegenseitigem Interesse.
+Key Features sind: Registrierung, Login, Speicherung von Personality Results, Swipen anderer User, Matches bei gegenseitigem Interesse und direkte Nachrichten zwischen Matches.
 
-Die Datenbankstruktur umfasst folgende Tabellen: `user`, `university`, `personality_result`, `swipe` und `match`.
+Die Datenbankstruktur umfasst folgende Tabellen: `user`, `university`, `personality_result`, `swipe`, `match` und `message`.
 
 Im Folgenden sind die zugehörigen Attribute, Typen und Einschränkungen aufgelistet.
 
@@ -103,6 +103,23 @@ FOREIGN KEY ("swiped_id") REFERENCES user("user_id")
 "matched_at"    DATE,
 FOREIGN KEY ("user1_id") REFERENCES user("user_id"),
 FOREIGN KEY ("user2_id") REFERENCES user("user_id")
+</pre>
+</details>
+
+---
+
+## Tabelle: Message
+
+<details open markdown="block">
+<summary>- Message/</summary>
+<pre>
+"id"         INTEGER PRIMARY KEY,
+"match_id"   INTEGER NOT NULL,
+"sender_id"  INTEGER NOT NULL,
+"text"       TEXT NOT NULL,
+"timestamp"  DATETIME DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY ("match_id") REFERENCES match("match_id"),
+FOREIGN KEY ("sender_id") REFERENCES user("user_id")
 </pre>
 </details>
 

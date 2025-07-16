@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <div class="text-center mt-4">
+    <h2>Evaluation aller Matches</h2>
+    <p>
+      Diese Übersicht zeigt den Compatibility Score, die vergebenen Bewertungen und hilft bei der Algorithmusverfeinerung.
+    </p>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 800px;">
+  {% if matches %}
+    {% for match in matches %}
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">
+            {{ match.user1.name }} 🤝 {{ match.user2.name }}
+          </h4>
+
+          <p><strong>Compatibility Score:</strong> {{ "%.2f"|format(match.compatibility) }}</p>
+
+          <p>
+            <strong>Bewertung von {{ match.user1.name }}:</strong>
+            {% if match.rating_by_user1 is not none %}
+              {{ match.rating_by_user1 }}/5
+            {% else %}
+              <em>Keine Bewertung</em>
+            {% endif %}
+          </p>
+
+          <p>
+            <strong>Bewertung von {{ match.user2.name }}:</strong>
+            {% if match.rating_by_user2 is not none %}
+              {{ match.rating_by_user2 }}/5
+            {% else %}
+              <em>Keine Bewertung</em>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-info text-center">
+      Noch keine gespeicherten Matches zur Evaluation.
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
