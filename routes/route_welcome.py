@@ -23,6 +23,8 @@ def welcome():
                 return redirect(url_for('main.chat'))
             elif form.evaluate_match.data:
                 return redirect(url_for('main.evaluate_match'))
+            elif form.evaluation_overview.data:
+                return redirect(url_for('main.evaluation_overview'))
         
         return render_template('welcome.html',form=form,user=user)
     else:
