@@ -3,7 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<div class="container mt-5" style="max-width: 600px;">
+<div class="container mt-5" style="max-width: 600px; height:100vh"">
     <h2 class="mb-4 text-center">Register</h2>
 
     <form method="POST" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
         </div>
 
         <div class="d-grid">
-            {{ form.submit(class="btn btn-primary") }}
+            {{ form.submit(class="btn btn-primary btn-lg") }}
         </div>
     </form>
 </div>
