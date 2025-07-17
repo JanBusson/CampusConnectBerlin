@@ -92,4 +92,4 @@ Summe = 4 -> Da, die Summe postiv ist, ist das Ergebnis **E**xtraversion
 - Persönlichkeitstest um Menschen besser einzuschätzen
 - Anderer Ansatz als herkömmliche Anwendungen - potenziell mehr Erfolg beim Matchen
 
-
+---
