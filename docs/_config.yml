@@ -1,5 +1,8 @@
 title: CampusConnect Berlin
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.6.2
+plugins:
+  - jekyll-remote-theme
+  
 mermaid:
   version: "10.9.0" # Pick version from https://cdn.jsdelivr.net/npm/mermaid/
 callouts:
