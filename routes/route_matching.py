@@ -12,6 +12,8 @@ from forms.form_matching import CreateMatchingForm
 def matching():
      curr_user_id = session.get('user_id')
      user= match_dao.get_random_user(curr_user_id)
+     if user is None:
+          return render_template('all_users_swiped.html')
      age = calculate_age(user.birth_date)
      personality_sore = personality_dao.get_type_by_uid(user.user_id)
      form=CreateMatchingForm()
