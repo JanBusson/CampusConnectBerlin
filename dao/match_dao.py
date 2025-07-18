@@ -8,7 +8,13 @@ class match_dao:
 
     @classmethod
     def get_random_user(cls, current_user_id):
-        return User.query.filter(User.user_id != current_user_id).order_by(func.random()).first()
+    # Alle ids die vom Nutzer geswiped wurden
+        swiped_ids = db.session.query(Swipe.swiped_id).filter(Swipe.swiper_id == current_user_id)
+
+        # Zufälliger User, der noch nciht geswiped wurde
+        return User.query.filter(User.user_id != current_user_id).filter(~User.user_id.in_(swiped_ids)) \
+            .order_by(func.random()).first()
+            # ~ bedeutet sowas wie NOT; \ dient zu Zeilenumbrüchen in Python
 
     @classmethod
     def get_all_for_uid(cls, user_id):
