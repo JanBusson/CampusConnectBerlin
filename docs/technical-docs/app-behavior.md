@@ -22,7 +22,7 @@ Um den gesamten App Flow zu visualisieren, haben wir ein App Flow Diagram erstel
 
 ---
 
-[hier AppFlowDiagram]
+![App Flow Diagramm](../assets/images/SequenzdiagrammCampusConnect.jpg)
 
 ---
 

@@ -30,4 +30,4 @@ Contributions
 : Grundlage der Ermittlung der Persönlichkeitstypen anhand MBTI-types 
 : Erstellung des Persönlichkeitstests und Berechnung/Anzeige des Personalitytypes, insgesamt 20 Fragen 
 : Bootstrap Redesigning (Style mit https://bootswatch.com/vapor/)
-: Dokumentation (App Structure, Sequenzdiagramm ganze App)
+: Dokumentation (App Structure,  App Flow Diagram)
