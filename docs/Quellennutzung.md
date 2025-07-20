@@ -14,6 +14,12 @@ Dan Johnston, The Ultimate Guide to MBTI Compatibility in Dating and Relationshi
 Quellen für das Design von Bootswatch
 Thomas Park, Vapor: A cyberpunk aesthetic, URL: https://bootswatch.com/vapor/ (Letzter Aufruf am 17.07.2025) 
 
+Quellen für Kompatibilitätswert:
+
+Chugani, V. (2024) Understanding Euclidean Distance: From Theory to Practice. DataCamp. Verfügbar unter: https://www.datacamp.com/tutorial/euclidean-distance (Letzter Aufruf am 14. Juni 2025).
+
 #KI generierte Quellen Nutzung
 - quiz.html für die Erweiterung der Fragen von 3 Fragen pro Dimension auf 5 Fragen pro Dimension
 Chat Link: https://chatgpt.com/share/68665c2d-1570-8000-9473-31b8d751732e
+
+- data-model.md sprachlich auf deutsch umgeschrieben
