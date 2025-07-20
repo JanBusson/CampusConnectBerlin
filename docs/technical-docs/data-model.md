@@ -135,4 +135,4 @@ Das Modell basiert auf SQLAlchemy und unterstützt die funktionalen Anforderunge
 
 ## ERD
 
-![ERD](../assets/images/Datenmodell.jpg)
+![ERD](../assets/images/Datenmodell.jpeg)
