@@ -31,3 +31,14 @@ Contributions
 : Erstellung des Persönlichkeitstests und Berechnung/Anzeige des Personalitytypes, insgesamt 20 Fragen 
 : Bootstrap Redesigning (Style mit https://bootswatch.com/vapor/)
 : Dokumentation (App Structure,  App Flow Diagram)
+
+## [Jan Busson]
+
+Contributions  
+: Implementierung der Datenmodell-Komponenten  
+  – User-Registrierung und Login  
+  – Anzeige von Matches inkl. Kompatibilitätsberechnung  
+  – Bewertungsfunktion für einzelne Matches  
+  – Übersicht aller Bewertungen zur Evaluierung 
+: Entwicklung der zugehörigen Routen (Register, Login, Match-Übersicht, Bewertungsansicht...)  
+: Erstellung der technischen Dokumentation im Bereich **API-Referenz**
