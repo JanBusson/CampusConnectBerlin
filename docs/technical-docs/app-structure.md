@@ -14,6 +14,8 @@ Um so strukturiert wie möglich zu arbeiten, haben wir unsere Datenstruktur, sie
 - documents/
 - forms/
 - instance/
+- quellen/chatgpt_pdf/
+- resources/images
 - routes/
 - services/
 - templates/
@@ -31,33 +33,80 @@ Um so strukturiert wie möglich zu arbeiten, haben wir unsere Datenstruktur, sie
 **app/docs/**
 - assets/images/
     - Datenmodell.jpg
+    - SequenzDiagrammMatching.jpg
+    - SequenzdiagrammCampusConnect.jpg
+    - image-chat-room.png
+    - image-chat.png
+    - image-evaluation-overview.png
+    - image-evaluation.png
+    - image-find-match.png
+    - image-login.png
+    - image-my-matches.png
+    - image-quiz-result.png
+    - image-quiz.png
+    - image-register.png
+    - image-start.png
+    - image-welcome.png
+
+- team-eval
+    - contributions.md
+    - goals.md
+    - improvements.md
+    - index.md
+    - peer-review.md
+
 - technical-docs
-    - architecture.md
+    - api-reference.md
+    - app-behavior.md
+    - app-structure.md
     - data-model.md
-    - reference.md
-- Arbeitsteilung.md
+    - design-decisions.md
+    - index.md
+
 - Quellennutzung.md
+- README.md
 - _config.yml
 - index.md
+- user-eval.md
 - value-proposition.md
 
 **app/documents/**
 - WebApp_Idea_JAK.docx
 
 **app/forms/**
+- form_chat_room.py
 - form_login.py
 - form_matching.py
 - form_register.py
 - form_start.py
 - form_welcome.py
+- forms_evaluate.py
 
 **app/instance/**
 - campusconnect_berlin.sqlite
 
+**app/quellen/chatgpt_pdf/**
+- datenmodellchat.pdf
+
+**app/resources/images/**
+- amina_rahmani.png
+- anna_petrova.png
+- clara_nguyen.png
+- jonas_meier.png
+- julia_carter.png
+- leila_osamn.png
+- lukas_schneider.png
+- max_becker.png
+- sara_elmasri.png
+- tomas_rivera.png
+
 **app/routes/**
 - __init__.py
 - profile_picture.py
-- route_friend_suggestions.py
+- route_chat.py
+- route_chat_room.py
+- route_evaluate_match.py
+- route_evaluation_overview.py
 - route_login.py
 - route_matching.py
 - route_my_matches.py
@@ -75,8 +124,12 @@ Um so strukturiert wie möglich zu arbeiten, haben wir unsere Datenstruktur, sie
 **app/templates/**
 - 404.html
 - 500.html
+- all_users_swiped.html
 - base.html
-- friend_suggestions.html
+- chat.html
+- chat_room.html
+- evaluate_match.html
+- evaluation_overview.html
 - login.html
 - matching.html
 - my_matches.html
@@ -86,12 +139,13 @@ Um so strukturiert wie möglich zu arbeiten, haben wir unsere Datenstruktur, sie
 - start.html
 - welcome.html
 
-
+**app/**
 - .gitignore
 - LICENSE
-- README.md
 - app.py
 - db.py
+- insert_matches.py
+- insert_messages.py
 - insert_profiles.py
 - insert_uni.py
 - models.py
