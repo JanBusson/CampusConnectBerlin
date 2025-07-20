@@ -42,3 +42,19 @@ Mit diesem Projekt habe ich zum ersten Mal Python gelernt und tatsächlich im Ra
 ### Tip for the future
 
 Ich würde eine strukturiertere Planung angesetzt, obwohl wir uns gut abstimmen und gut miteinander arbeiten konnten, wäre eine detailiertere Arbeitsplanung hilfreich.
+
+---
+
+## Jan Busson – review 3
+
+### My observation
+
+Die Zusammenarbeit im Team war von Anfang an von sehr guter Kommunikation geprägt. Wir haben uns regelmäßig abgestimmt und konnten auf diese Weise sowohl technische als auch inhaltliche Herausforderungen effektiv lösen. Rückblickend wäre eine alternative Aufteilung nach Aufgabenbereichen der App (z. B. Userverwaltung, Matching, Bewertungssystem) statt strikt technischer Ebenen (z. B. DAO, Service, Route) vermutlich noch zielführender gewesen – das Ergebnis war dennoch sehr überzeugend.
+
+### Effect on me
+
+Vor diesem Projekt hatte ich nur grundlegende Kenntnisse in HTML und CSS. Im Laufe der Arbeit habe ich mich tief in Flask, das DAO-Pattern, Jinja2 sowie WTForms eingearbeitet – und konnte diese Tools auch direkt in einem realen, komplexeren Anwendungsfall einsetzen. Besonders spannend war für mich die Auswertung der Nutzerevaluation, da sie nicht nur die Funktionalität, sondern auch den tatsächlichen Nutzen und Impact unserer Anwendung sichtbar gemacht hat.
+
+### Tip for the future
+
+Beim nächsten Projekt würde ich für eine noch klarere Aufgabenverteilung plädieren – orientiert an den funktionalen Bereichen der App. Dadurch könnten Redundanzen vermieden und Schnittstellen besser abgestimmt werden. Insgesamt bin ich aber sehr zufrieden mit dem Verlauf und dem Teamwork in diesem Projekt.
