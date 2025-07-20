@@ -20,6 +20,6 @@ Chugani, V. (2024) Understanding Euclidean Distance: From Theory to Practice. Da
 
 #KI generierte Quellen Nutzung
 - quiz.html für die Erweiterung der Fragen von 3 Fragen pro Dimension auf 5 Fragen pro Dimension
-Chat Link: https://chatgpt.com/share/68665c2d-1570-8000-9473-31b8d751732e
+Chat Link: https://chatgpt.com/share/68665c2d-1570-8000-9473-31b8d751732e - als Pdf in quellen/chatgpt_pdf als Quiz16PersonalitiesErweiterung verfügbar
 
 - data-model.md sprachlich auf deutsch umgeschrieben
