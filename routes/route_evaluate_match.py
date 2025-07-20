@@ -4,28 +4,29 @@ from dao.match_dao import match_dao
 from dao.user_dao import user_dao
 from forms.forms_evaluate import CreateRatingForm
 
-@main_bp.route('/evaluate_match', methods=['GET', 'POST']) 
+@main_bp.route('/evaluate_match', methods=['GET', 'POST'])
 def evaluate_match():
-    user_id= session.get('user_id')
+    user_id = session.get('user_id')
     currUser = user_dao.get_uid(user_id)
     matches = match_dao.get_all_for_uid(user_id=user_id)
-    
-    # Prüfen ob POST
+
+ 
     if request.method == 'POST':
-        form = CreateRatingForm()
+        form = CreateRatingForm(request.form)
         if form.validate_on_submit():
             match_id = form.match_id.data
             rating = form.rating.data
-
-            # Optional: Logging oder Debugging
-            print(f"[INFO] User {user_id} bewertet Match {match_id} mit {rating}")
-
-            # Bewertung speichern – hier müsstest du z. B. match_dao.evaluate_match(...) aufrufen
             match_dao.evaluate_match(user_id=user_id, match_id=match_id, rating=rating)
-
-            flash("Bewertung erfolgreich gespeichert.", "success")
+            flash("Bewertung gespeichert.", "success")
             return redirect(url_for('main.evaluate_match'))
+        else:
+            print("Fehler:", form.errors)
 
-        
-    #hier muss die Klasse und nicht Instanz übergeben werden, da für jedes Match ein neues Ratin Form erstellt wird
-    return render_template('evaluate_match.html',matches=matches,currUser=currUser,RatingForm=CreateRatingForm)
+    
+    match_forms = []
+    for match in matches:
+        form = CreateRatingForm()
+        form.match_id.data = str(match.match_id)
+        match_forms.append((match, form))
+
+    return render_template("evaluate_match.html", match_forms=match_forms, currUser=currUser)

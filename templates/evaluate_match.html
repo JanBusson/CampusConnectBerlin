@@ -11,36 +11,41 @@
 
 {% block content %}
 <div class="container mt-4" style="max-width: 800px;">
-  {% if matches %}
-    {% for match in matches %}
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h4 class="card-title">
-            {{ match.user1.name }} 🤝 {{ match.user2.name }}
-          </h4>
+  {% if match_forms %}
+   {% for match, form in match_forms %}
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h4>{{ match.user1.name }} 🤝 {{ match.user2.name }}</h4>
+      <p>Compatibility Score: {{ "%.2f"|format(match.compatibility) }}</p>
 
-          <p><strong>Compatibility Score:</strong> {{ "%.2f"|format(match.compatibility) }}</p>
+      {% if match.user1.user_id == currUser.user_id %}
+        {% set already_rated = match.rating_by_user1 %}
+      {% else %}
+        {% set already_rated = match.rating_by_user2 %}
+      {% endif %}
 
-          <p>
-            <strong>Bewertung von {{ match.user1.name }}:</strong>
-            {% if match.rating_by_user1 is not none %}
-              {{ match.rating_by_user1 }}/5
-            {% else %}
-              <em>Keine Bewertung</em>
-            {% endif %}
-          </p>
+      {% if not already_rated %}
+        <form method="POST" action="{{ url_for('main.evaluate_match') }}">
+          {{ form.hidden_tag() }}
 
-          <p>
-            <strong>Bewertung von {{ match.user2.name }}:</strong>
-            {% if match.rating_by_user2 is not none %}
-              {{ match.rating_by_user2 }}/5
-            {% else %}
-              <em>Keine Bewertung</em>
-            {% endif %}
-          </p>
+          <div class="mb-2">
+            {{ form.rating.label }}
+            {% for subfield in form.rating %}
+              <label class="me-2">{{ subfield() }} {{ subfield.label.text }}</label>
+            {% endfor %}
+          </div>
+
+          {{ form.submit(class="btn btn-primary") }}
+        </form>
+      {% else %}
+        <div class="alert alert-success mt-2">
+          Du hast dieses Match bereits bewertet.
         </div>
-      </div>
-    {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
   {% else %}
     <div class="alert alert-info text-center">
       Noch keine gespeicherten Matches zur Evaluation.
