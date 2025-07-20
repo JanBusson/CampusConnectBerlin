@@ -19,6 +19,7 @@ nav_order: 4
 {:toc}
 </details>
 <!-- trigger build -->
+
 ## Start
 
 ### `index()`
@@ -33,7 +34,7 @@ Stellt zwei Buttons bereit – *Login* und *Register* – über das `CreateStart
 Je nach Auswahl des Nutzers erfolgt eine Weiterleitung zur Login- oder Registrierungsseite.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-start.png)
+![Alt text](../assets/images/image-start.png)
 
 ---
 
@@ -52,7 +53,7 @@ Bei gültiger Eingabe wird ein neuer Nutzer erstellt und in der Datenbank gespei
 Nach erfolgreicher Registrierung erfolgt eine Weiterleitung zum Persönlichkeitstest.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-register.png)
+![Alt text](../assets/images/image-register.png)
 
 ---
 
@@ -71,7 +72,7 @@ Jede Frage wird auf einer Skala von +3 bis –3 über gestylte Radio-Buttons bea
 Die Antworten werden per POST an `/quiz_results` gesendet.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-quiz.png)
+![Alt text](../assets/images/image-quiz.png)
 
 ---
 
@@ -95,7 +96,7 @@ Der finale Typ (z. B. `INTJ`) wird genutzt, um:
 - Die Seite `quiz_results.html` mit den Informationen zum Persönlichkeitstyp zu rendern
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-quiz-result.png)
+![Alt text](../assets/images/image-quiz-result.png)
 
 ---
 
@@ -114,7 +115,7 @@ Nach dem Absenden überprüft die Funktion E-Mail und Passwort über `check_user
 - Bei ungültigen Anmeldedaten wird eine Fehlermeldung angezeigt und die Seite neu geladen.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-login.png)
+![Alt text](../assets/images/image-login.png)
 
 ---
 
@@ -138,7 +139,7 @@ Der aktuelle Nutzer wird über die Session geladen, anschließend stehen mehrere
 Wenn kein Nutzer in der Session vorhanden ist, wird ein 404-Fehler ausgelöst.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-welcome.png)
+![Alt text](../assets/images/image-welcome.png)
 
 ---
 
@@ -153,15 +154,15 @@ Wenn kein Nutzer in der Session vorhanden ist, wird ein 404-Fehler ausgelöst.
 **Zweck:**  
 Zeigt dem aktuellen Nutzer ein zufällig ausgewähltes Nutzerprofil, das noch nicht geswipet wurde.  
 Über das Formular `CreateMatchingForm` kann der Nutzer zwischen folgenden Optionen wählen:
-- **Like**: Erstellt einen „like“-Swipe über `SwipeService.process_swipe()` und lädt das nächste Profil
-- **Dislike**: Erstellt einen „dislike“-Swipe direkt über das `swipe_dao` und lädt das nächste Profil
+- **Like**: Erstellt einen „like“-Swipe über `SwipeService.process_swipe()` und lädt das nächste Profil  
+- **Dislike**: Erstellt einen „dislike“-Swipe direkt über das `swipe_dao` und lädt das nächste Profil  
 - **Zurück**: Leitet zurück zur Willkommensseite
 
 Wird kein weiteres Profil gefunden, wird stattdessen die Seite `all_users_swiped.html` gerendert.  
 Zusätzlich wird das Alter berechnet (`calculate_age`) und der MBTI-Persönlichkeitstyp geladen.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-matching.png)
+![Alt text](../assets/images/image-find-match.png)
 
 ---
 
@@ -177,14 +178,14 @@ Zusätzlich wird das Alter berechnet (`calculate_age`) und der MBTI-Persönlichk
 Zeigt dem eingeloggten Nutzer alle bisherigen Matches an.  
 Die zugehörigen Match-Datensätze werden über `match_dao.get_all_for_uid()` geladen.  
 Für jede Match-Beziehung wird jeweils das Gegenüber (also der andere Nutzer) angezeigt sowie:
-- Kompatibilität (in Prozent)
-- Match-Status
+- Kompatibilität (in Prozent)  
+- Match-Status  
 - Datum des Matchings
 
 Wenn keine Matches vorhanden sind, wird eine entsprechende Info-Nachricht angezeigt.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-my-matches.png)
+![Alt text](../assets/images/image-my-matches.png)
 
 ---
 
@@ -205,7 +206,7 @@ Die Daten werden über `match_dao.get_all_for_uid()` geladen, das Gegenüber wir
 Wenn noch keine Chats verfügbar sind (d. h. keine Matches vorhanden), erscheint eine Hinweisbox.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-chat.png)
+![Alt text](../assets/images/image-chat.png)
 
 ---
 
@@ -218,14 +219,14 @@ Wenn noch keine Chats verfügbar sind (d. h. keine Matches vorhanden), erschei
 **Zweck:**  
 Zeigt einen privaten Chat-Raum für ein Match.  
 Der aktuelle Nutzer kann hier:
-- Den Chatverlauf mit dem jeweiligen Match sehen (geladen über `get_messages_for_match(match_id)`)
+- Den Chatverlauf mit dem jeweiligen Match sehen (geladen über `get_messages_for_match(match_id)`)  
 - Neue Nachrichten schreiben und abschicken (verarbeitet via `save_message()`)
 
 Nach Absenden einer Nachricht wird die Seite neu geladen, um den aktualisierten Verlauf darzustellen.  
 Der andere Nutzer (Match-Partner) wird automatisch bestimmt – je nachdem, ob der aktuelle Nutzer `user1` oder `user2` im Match ist.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-chat-room.png)
+![Alt text](../assets/images/image-chat-room.png)
 
 ---
 
@@ -240,19 +241,19 @@ Der andere Nutzer (Match-Partner) wird automatisch bestimmt – je nachdem, ob d
 **Zweck:**  
 Zeigt eine Übersicht aller Matches des aktuellen Nutzers und ermöglicht eine Bewertung dieser Verbindungen.  
 Für jedes Match werden angezeigt:
-- Namen beider Nutzer
-- Compatibility Score
+- Namen beider Nutzer  
+- Compatibility Score  
 - Vorhandene Bewertungen von beiden Seiten
 
 Wenn eine Bewertung per Formular eingereicht wird (`CreateRatingForm`), wird:
-- Die Bewertung mit `match_dao.evaluate_match()` gespeichert
-- Eine Erfolgsmeldung ausgegeben
+- Die Bewertung mit `match_dao.evaluate_match()` gespeichert  
+- Eine Erfolgsmeldung ausgegeben  
 - Die Seite neu geladen
 
 Für jedes Match wird ein separates Bewertungsformular gerendert.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-evaluate-match.png)
+![Alt text](../assets/images/image-evaluation.png)
 
 ---
 
@@ -266,10 +267,10 @@ Für jedes Match wird ein separates Bewertungsformular gerendert.
 
 **Zweck:**  
 Zeigt eine tabellarische Übersicht aller gespeicherten Matches, einschließlich:
-- Match-ID
-- Namen beider Nutzer
-- Kompatibilitäts-Score
-- Bewertungen beider Seiten (sofern vorhanden)
+- Match-ID  
+- Namen beider Nutzer  
+- Kompatibilitäts-Score  
+- Bewertungen beider Seiten (sofern vorhanden)  
 - Durchschnittliche Bewertung (falls beide bewertet haben)
 
 Diese Ansicht dient primär der Qualitätskontrolle und Algorithmusverfeinerung.  
@@ -278,5 +279,4 @@ Diese Ansicht dient primär der Qualitätskontrolle und Algorithmusverfeinerung.
 Die Daten werden mithilfe von SQL-Alises (`User1`, `User2`) geladen, um die Match-Tabelle mit den zugehörigen Nutzernamen zu verknüpfen.
 
 **Beispielhafte Ausgabe:**  
-![Alt text](image-evaluation-overview.png)
-
+![Alt text](../assets/images/image-evaluation-overview.png)
