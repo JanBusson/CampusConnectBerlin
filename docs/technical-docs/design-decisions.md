@@ -93,3 +93,41 @@ Summe = 4 -> Da, die Summe postiv ist, ist das Ergebnis **E**xtraversion
 - Anderer Ansatz als herkömmliche Anwendungen - potenziell mehr Erfolg beim Matchen
 
 ---
+
+## 4. Chat-Konzept & Routenstruktur in Flask  
+by [Jan]
+
+### Problemstellung
+
+Für eine sinnvolle Nutzerbindung soll unsere App nicht nur Matches anzeigen, sondern direkte Kommunikation ermöglichen. Das bedeutet, dass ein Chat zwischen gematchten Nutzern implementiert werden muss – inklusive Datenspeicherung, Anzeige in der Oberfläche sowie Trennung nach Matches.
+
+Zusätzlich musste das Projekt trotz wachsender Komplexität (Matching, Profile, Swipe-Logik, Bewertung, Chat) übersichtlich und wartbar bleiben – insbesondere in Bezug auf Routen und Templates.
+
+### Entscheidung
+
+#### a) Umsetzung des Chat-Features  
+Wir haben eine klassische Nachrichtenstruktur mit `Message`, `User` und `Match` Tabellen umgesetzt. Nachrichten werden eindeutig einem `match_id` zugeordnet, wobei `sender_id`, `text` und `timestamp` mitgespeichert werden.
+
+Der Aufbau:
+
+- Jeder Chat ist exklusiv an ein Match gekoppelt  
+- Nachrichten werden aufsteigend nach Zeit sortiert  
+- Eingabe erfolgt über ein HTML-Formular, die Übertragung per `POST`  
+- Neue Nachrichten werden über eine eigene Route verarbeitet und per `redirect()` zur Chatseite zurückgeführt  
+
+DAO & Service Layer:
+
+- `message_dao.get_messages_for_match(match_id)` liest alle Nachrichten  
+- `message_dao.save_message(match_id, sender_id, text)` speichert neue Nachrichten  
+
+#### b) Flask-Routenstruktur  
+Um die Codebasis übersichtlich zu halten, haben wir das Projekt modular aufgebaut. Jede Hauptfunktion wurde über eine eigene Route umgesetzt und in separaten Templates dargestellt.  
+
+Die konkrete Routenübersicht inklusive aller Methoden, Pfade und Beispiele findet sich im Abschnitt [API-Referenz](/api-referenz).
+
+### Vorteile
+
+- Intuitive Chat-Erfahrung ohne externe Abhängigkeiten  
+- Modular erweiterbar, z. B. für Medienversand oder Chat-Verlauf-Analyse  
+- Klare Trennung von Routen und Logik erleichtert Debugging und Wartung  
+- Übersichtliche Architektur – neue Features können unabhängig ergänzt werden
