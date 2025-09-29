@@ -1,6 +1,6 @@
 ---
 title: API-Referenz
-parent: Technische Dokumentation
+parent: Technical Docs
 nav_order: 4
 ---
 
