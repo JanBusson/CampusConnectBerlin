@@ -4,7 +4,7 @@ CampusConnect Berlin ist eine Web-App, um Freundschaften unter Berliner Studiere
 Mithilfe eines MBTI basierten Persönlichkeitstests, Swipes, Matching und Chatting bringt die App Nutzer miteinander in Kontakt.
 
 **Dokumentation (GitHub Pages):**  
-https://janbusson.github.io/WebDev/
+[https://janbusson.github.io/WebDev/](https://janbusson.github.io/CampusConnectBerlin/)
 
 ---
 
